@@ -38,9 +38,8 @@ const About = () => {
               <div className="about-icon">
                 <i className="fas fa-user-astronaut"></i>
               </div>
-              <div className="about-title">
-                <h3>Riccardo Zozzolotto</h3>
-                <span className="about-role">AI Developer & Data Analyst</span>
+              <div className="about-title" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start' }}>
+                <span className="about-role" style={{ fontSize: '1.25rem', fontWeight: 700, textAlign: 'center', marginTop: 0 }}>AI Developer & Data Analyst</span>
               </div>
             </div>
             
@@ -52,10 +51,8 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
               >
-                👋 Ciao, sono <strong>Riccardo Zozzolotto</strong>.<br />
-                A.I. Developer and Data Analyst in tirocinio presso <a href="https://espiu.it" target="_blank" rel="noreferrer" className="company-link">Espiù S.R.L.</a>, trasformo dati in applicazioni intelligenti.
+                👋 Ciao! Mi chiamo Riccardo, ho 21 anni e sto per iniziare il secondo anno del corso AI Developer & Data Analyst presso un istituto ITS.
               </motion.p>
-              
               <motion.p
                 className="about-description"
                 initial={{ opacity: 0, y: 20 }}
@@ -63,7 +60,9 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
               >
-                Appassionato di <strong>Intelligenza Artificiale</strong>, <strong>open source</strong>, <strong>data science</strong> e <strong>design funzionale</strong> che emoziona.
+                Attualmente lavoro come AI Developer & Data Analyst nell’Innovation Hub di <a href="https://espiu.it" target="_blank" rel="noreferrer" className="company-link">Espiù S.R.L.</a>, dove trasformo dati e codice in app intelligenti e funzionali.<br /><br />
+                Mi occupo di analisi, automazione e sviluppo di soluzioni data-driven con tecnologie come Python, Power BI, Qlik, Knime, SQL, React/Vite, Orange, e altri strumenti.<br /><br />
+                Sono pratico, curioso e orientato al risultato. Cerco visibilità e nuove opportunità per crescere nel mondo tech, portando valore concreto con idee semplici ma efficaci.
               </motion.p>
               
               <motion.div

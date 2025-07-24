@@ -8,7 +8,7 @@ import LogoRZ from './LogoRZ';
 
 const Hero = () => {
   return (
-    <section id="home" style={{ width: '100vw', minHeight: '90vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', flexDirection: 'column', margin: 0, padding: 0 }}>
+    <section id="home" style={{ width: '100vw', minHeight: '90vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', overflow: 'hidden', flexDirection: 'column', margin: 0, padding: 0, background: 'transparent' }}>
       {/* Layer di particelle casuali animate */}
       <div className="random-particles-layer">
         {[...Array(25)].map((_, i) => (
@@ -41,8 +41,8 @@ const Hero = () => {
             <motion.a href="#about" className="hero-btn hero-btn-secondary" whileHover={{ scale: 1.05 }}>Scopri di più</motion.a>
           </div>
         </motion.div>
-        <div className="hero-mesh"></div>
       </div>
+      <div className="hero-fade-bottom"></div>
     </section>
   );
 };

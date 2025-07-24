@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import CmdBackground from "./components/CmdBackground";
+import Navbar from "./components/Navbar";
 
 function App() {
   useEffect(() => {
@@ -78,6 +79,7 @@ function App() {
   return (
     <>
       <CmdBackground />
+      <Navbar />
       {/* Navbar rimossa */}
       <main>
         <Hero />

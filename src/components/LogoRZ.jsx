@@ -144,7 +144,6 @@ const LogoRZ = () => {
           <span className="logo-rz-matrix">
             {displayed[0]}{displayed[1]}
           </span>
-          <span className="logo-rz-glass-reflection" />
         </>
       )}
       <style>{`

@@ -55,18 +55,6 @@
   transition: transform 0.5s cubic-bezier(.4,0,.2,1), filter 0.5s;
   will-change: transform, filter;
 }
-.logo-rz-glass-reflection {
-  content: '';
-  position: absolute;
-  left: 0; right: 0; top: 0;
-  height: 45%;
-  background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.04) 100%);
-  border-radius: 50% 50% 40% 40%/60% 60% 40% 40%;
-  pointer-events: none;
-  z-index: 2;
-  width: 100%;
-  opacity: 0.7;
-}
 .logo-rz-glass.logo-rz-hovered {
   transform: rotate(-7deg) scale(1.07);
   filter: drop-shadow(0 0 48px #6be6ff) brightness(1.2);

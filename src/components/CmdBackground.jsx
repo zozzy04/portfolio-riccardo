@@ -41,10 +41,30 @@ function getRandomCommand() {
   return COMMANDS[getRandomInt(0, COMMANDS.length - 1)];
 }
 
+// Mantieni traccia delle posizioni già usate
+const usedPositions = [];
+
 function getRandomPosition() {
+  let tries = 0;
+  let pos;
+  do {
+    pos = {
+      top: getRandomInt(2, 95),
+      left: getRandomInt(2, 95),
+    };
+    tries++;
+    // Verifica che la nuova posizione sia distante almeno 8% da tutte le altre
+  } while (
+    usedPositions.some(
+      (p) =>
+        Math.abs(p.top - pos.top) < 8 && Math.abs(p.left - pos.left) < 18
+    ) && tries < 20
+  );
+  usedPositions.push(pos);
+  // Ritorna in formato stringa per compatibilità con il resto del codice
   return {
-    top: getRandomInt(2, 95) + "%",
-    left: getRandomInt(2, 95) + "%",
+    top: pos.top + "%",
+    left: pos.left + "%",
   };
 }
 
@@ -118,6 +138,8 @@ const CmdBackground = () => {
           // Rimuovi la riga (senza aggiungerne subito una nuova)
           setTimeout(() => {
             setRows((prev) => prev.filter((r) => r.id !== row.id));
+            const idx = usedPositions.findIndex(p => p.top === parseInt(row.position.top) && p.left === parseInt(row.position.left));
+            if (idx !== -1) usedPositions.splice(idx, 1);
           }, 100);
         }
       }
