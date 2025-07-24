@@ -1,0 +1,92 @@
+.logo-rz-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+  font-size: 8rem;
+  color: #e0eaff;
+  text-shadow: 0 0 32px #00bfff, 0 0 8px #fff;
+  background: none;
+  user-select: none;
+  animation: logo-pulse 1.5s infinite, logo-rotate 6s infinite alternate;
+}
+
+.logo-rz-text {
+  letter-spacing: 0.1em;
+}
+
+.logo-rz-cursor {
+  margin-left: 0.1em;
+  color: #00bfff;
+  text-shadow: 0 0 16px #00bfff;
+  font-weight: bold;
+  animation: blink-cursor 1s steps(2, start) infinite;
+  font-size: 1em;
+}
+
+.logo-rz-cursor.hidden {
+  opacity: 0;
+}
+
+@keyframes blink-cursor {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes logo-pulse {
+  0% { transform: scale(1); filter: brightness(1.1); }
+  50% { transform: scale(1.12); filter: brightness(1.35); }
+  100% { transform: scale(1); filter: brightness(1.1); }
+}
+
+@keyframes logo-rotate {
+  0% { transform: rotate(-2deg); }
+  100% { transform: rotate(2deg); }
+}
+
+.logo-rz-glass {
+  position: relative;
+  display: inline-block;
+  background: none;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 24px #4f8cff88);
+  transition: transform 0.5s cubic-bezier(.4,0,.2,1), filter 0.5s;
+  will-change: transform, filter;
+}
+.logo-rz-glass-reflection {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; top: 0;
+  height: 45%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.04) 100%);
+  border-radius: 50% 50% 40% 40%/60% 60% 40% 40%;
+  pointer-events: none;
+  z-index: 2;
+  width: 100%;
+  opacity: 0.7;
+}
+.logo-rz-glass.logo-rz-hovered {
+  transform: rotate(-7deg) scale(1.07);
+  filter: drop-shadow(0 0 48px #6be6ff) brightness(1.2);
+}
+.logo-rz-matrix {
+  display: inline-block;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  background: inherit;
+  background-clip: inherit;
+  -webkit-background-clip: inherit;
+  color: inherit;
+  text-shadow: inherit;
+  line-height: 1;
+}
+@media (max-width: 900px) {
+  .logo-rz-glass { font-size: 5rem !important; }
+}
+@media (max-width: 600px) {
+  .logo-rz-glass { font-size: 2.7rem !important; }
+} 

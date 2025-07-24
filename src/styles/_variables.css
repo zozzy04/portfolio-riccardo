@@ -1,0 +1,32 @@
+:root {
+  /* Palette colori */
+  --color-bg: #0a0a0a;
+  --color-surface: #1a1a24;
+  --color-primary: #1e90ff; /* blu elettrico */
+  --color-accent: #4f8cff;
+  --color-accent-dark: #3d7cd9;
+  --color-accent-light: #f5f6fa;
+  --color-text: #f5f6fa;
+  --color-text-light: rgba(255,255,255,0.6);
+  --color-border: rgba(255,255,255,0.15);
+  --color-navbar-bg: rgba(10, 10, 20, 0.6);
+  --color-box-bg: rgba(20, 20, 30, 0.7); /* per effetto glass */
+
+  /* Tipografia */
+  --font-base: 'Inter', sans-serif;
+  --font-heading: 'Poppins', sans-serif;
+  --fs-h1: 3rem;
+  --fs-h2: 2.5rem;
+  --fs-base: 1rem;
+
+  /* Spaziature */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 3rem;
+  --space-xl: 4rem;
+
+  /* Transizioni */
+  --transition-fast: 0.2s ease-out;
+  --transition-base: 0.3s ease;
+}
