@@ -31,7 +31,7 @@ const Experience = () => {
       company: 'Espiù S.R.L.',
       companyLink: 'https://espiu.it',
       location: 'Treviso, Italia',
-      period: '2024 - Presente',
+      period: 'Maggio 2025 - Settembre 2025',
       description: 'Lavoro nell\'Innovation Hub di Espiù, dove mi occupo di sviluppo di soluzioni AI e analisi dati per ottimizzare i processi aziendali.',
       technologies: ['Python', 'Power BI', 'Qlik', 'Knime', 'SQL', 'React', 'Orange'],
       achievements: [
@@ -88,7 +88,26 @@ const Experience = () => {
       company: 'Opitergium Vini',
       companyLink: 'https://www.cantinaoderzo.it',
       location: 'Oderzo, Italia',
-      period: '2023/2024',
+      period: 'Agosto 2024 - Settembre 2024',
+      description: 'Gestione della produzione vinicola con conferimento uve, lavaggio vasche e gestione spaccio e stoccaggio vini.',
+      technologies: ['Teamwork', 'Organizzazione', 'Precisione', 'Gestione produzione'],
+      achievements: [
+        'Conferimento uve con attenzione alla qualità',
+        'Lavaggio vasche per la produzione vinicola',
+        'Gestione spaccio e stoccaggio vini',
+        'Mantenimento degli standard di qualità aziendali'
+      ],
+      color: '#8B4513',
+      gradient: 'linear-gradient(135deg, #8B4513 0%, #A0522D 100%)',
+      category: 'Wine'
+    },
+    {
+      icon: <Code size={24} />,
+      title: 'Manovale di Cantina',
+      company: 'Opitergium Vini',
+      companyLink: 'https://www.cantinaoderzo.it',
+      location: 'Oderzo, Italia',
+      period: 'Agosto 2023 - Settembre 2023',
       description: 'Gestione della produzione vinicola con conferimento uve, lavaggio vasche e gestione spaccio e stoccaggio vini.',
       technologies: ['Teamwork', 'Organizzazione', 'Precisione', 'Gestione produzione'],
       achievements: [
@@ -257,7 +276,7 @@ const Experience = () => {
         <div className="experience-summary">
           <div className="summary-stats">
             {[
-              { number: '6+', label: 'Esperienze Lavorative' },
+              { number: '7+', label: 'Esperienze Lavorative' },
               { number: '4+', label: 'Anni di Esperienza' },
               { number: '5+', label: 'Settori Esplorati' },
               { number: '20+', label: 'Competenze Sviluppate' }
