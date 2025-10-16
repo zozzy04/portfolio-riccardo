@@ -58,40 +58,112 @@ const Skills = () => {
 
   const technicalSkills = [
     {
-      category: 'Programming & Web',
-      icon: <Code size={24} />,
-      color: '#3B82F6',
-      gradient: 'linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%)',
-      skills: [
-        { name: 'Python', level: 90, color: '#10B981' },
-        { name: 'JavaScript', level: 85, color: '#F59E0B' },
-        { name: 'React', level: 80, color: '#3B82F6' },
-        { name: 'Node.js', level: 70, color: '#F59E0B' }
-      ]
+      name: 'Python',
+      icon: '🐍',
+      color: '#3776ab',
+      gradient: 'linear-gradient(135deg, #3776ab 0%, #ffd43b 100%)'
     },
     {
-      category: 'Data & AI',
-      icon: <Cpu size={24} />,
-      color: '#10B981',
-      gradient: 'linear-gradient(135deg, #10B981 0%, #34D399 100%)',
-      skills: [
-        { name: 'Power BI', level: 85, color: '#F59E0B' },
-        { name: 'Qlik', level: 80, color: '#10B981' },
-        { name: 'Pandas', level: 85, color: '#3B82F6' },
-        { name: 'Scikit-learn', level: 80, color: '#8B5CF6' }
-      ]
+      name: 'JavaScript',
+      icon: '⚡',
+      color: '#f7df1e',
+      gradient: 'linear-gradient(135deg, #f7df1e 0%, #000000 100%)'
     },
     {
-      category: 'Tools & Others',
-      icon: <Settings size={24} />,
-      color: '#8B5CF6',
-      gradient: 'linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%)',
-      skills: [
-        { name: 'SQL', level: 80, color: '#8B5CF6' },
-        { name: 'Git', level: 75, color: '#EF4444' },
-        { name: 'Vite', level: 85, color: '#10B981' },
-        { name: 'Knime', level: 75, color: '#3B82F6' }
-      ]
+      name: 'React',
+      icon: '⚛️',
+      color: '#61dafb',
+      gradient: 'linear-gradient(135deg, #61dafb 0%, #282c34 100%)'
+    },
+    {
+      name: 'Node.js',
+      icon: '🟢',
+      color: '#339933',
+      gradient: 'linear-gradient(135deg, #339933 0%, #68a063 100%)'
+    },
+    {
+      name: 'Power BI',
+      icon: '📊',
+      color: '#f2c811',
+      gradient: 'linear-gradient(135deg, #f2c811 0%, #000000 100%)'
+    },
+    {
+      name: 'Qlik',
+      icon: '🔍',
+      color: '#00b7c3',
+      gradient: 'linear-gradient(135deg, #00b7c3 0%, #ffffff 100%)'
+    },
+    {
+      name: 'Pandas',
+      icon: '🐼',
+      color: '#150458',
+      gradient: 'linear-gradient(135deg, #150458 0%, #e70488 100%)'
+    },
+    {
+      name: 'Scikit-learn',
+      icon: '🤖',
+      color: '#f7931e',
+      gradient: 'linear-gradient(135deg, #f7931e 0%, #ffffff 100%)'
+    },
+    {
+      name: 'SQL',
+      icon: '🗄️',
+      color: '#336791',
+      gradient: 'linear-gradient(135deg, #336791 0%, #ffffff 100%)'
+    },
+    {
+      name: 'Git',
+      icon: '🌿',
+      color: '#f05032',
+      gradient: 'linear-gradient(135deg, #f05032 0%, #ffffff 100%)'
+    },
+    {
+      name: 'Vite',
+      icon: '⚡',
+      color: '#646cff',
+      gradient: 'linear-gradient(135deg, #646cff 0%, #747bff 100%)'
+    },
+    {
+      name: 'Knime',
+      icon: '🔧',
+      color: '#0092cc',
+      gradient: 'linear-gradient(135deg, #0092cc 0%, #ffffff 100%)'
+    },
+    {
+      name: 'HTML5',
+      icon: '🌐',
+      color: '#e34f26',
+      gradient: 'linear-gradient(135deg, #e34f26 0%, #f06529 100%)'
+    },
+    {
+      name: 'CSS3',
+      icon: '🎨',
+      color: '#1572b6',
+      gradient: 'linear-gradient(135deg, #1572b6 0%, #33a9dc 100%)'
+    },
+    {
+      name: 'TensorFlow',
+      icon: '🧠',
+      color: '#ff6f00',
+      gradient: 'linear-gradient(135deg, #ff6f00 0%, #ffffff 100%)'
+    },
+    {
+      name: 'NumPy',
+      icon: '🔢',
+      color: '#4dabcf',
+      gradient: 'linear-gradient(135deg, #4dabcf 0%, #ffffff 100%)'
+    },
+    {
+      name: 'Orange',
+      icon: '🍊',
+      color: '#ff8c00',
+      gradient: 'linear-gradient(135deg, #ff8c00 0%, #ffffff 100%)'
+    },
+    {
+      name: 'Machine Learning',
+      icon: '🎯',
+      color: '#8b5cf6',
+      gradient: 'linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%)'
     }
   ];
 
@@ -117,27 +189,8 @@ const Skills = () => {
     return () => observer.disconnect();
   }, []);
 
-  const getSkillIcon = (skillName) => {
-    const icons = {
-      'Python': <Zap size={16} />,
-      'JavaScript': <Code size={16} />,
-      'SQL': <Database size={16} />,
-      'HTML/CSS': <Globe size={16} />,
-      'Power BI': <Target size={16} />,
-      'Qlik': <Brain size={16} />,
-      'Knime': <Users size={16} />,
-      'Orange': <Lightbulb size={16} />,
-      'Scikit-learn': <Brain size={16} />,
-      'TensorFlow': <Zap size={16} />,
-      'Pandas': <Database size={16} />,
-      'NumPy': <Code size={16} />,
-      'React': <Globe size={16} />,
-      'Vite': <Zap size={16} />,
-      'Node.js': <Code size={16} />,
-      'Git': <Users size={16} />
-    };
-    return icons[skillName] || <Code size={16} />;
-  };
+  // Duplica le competenze per creare l'effetto infinito
+  const duplicatedSkills = [...technicalSkills, ...technicalSkills, ...technicalSkills];
 
   return (
     <section id="skills" className="skills" ref={skillsRef}>
@@ -227,54 +280,24 @@ const Skills = () => {
                 <h3>Competenze Tecniche</h3>
               </div>
               
-              <div className="skills-grid">
-                {technicalSkills.map((category, categoryIndex) => (
-                  <div 
-                    key={categoryIndex} 
-                    className="skill-category-card"
-                    style={{
-                      '--card-color': category.color,
-                      '--card-gradient': category.gradient
-                    }}
-                  >
-                    <div className="card-glow"></div>
-                    <div className="card-particles"></div>
-                    
-                    <div className="category-header">
-                      <div className="category-icon" style={{ background: category.gradient }}>
-                        {category.icon}
-                      </div>
-                      <h4>{category.category}</h4>
+              <div className="skills-carousel-container">
+                <div className="skills-carousel">
+                  {duplicatedSkills.map((skill, index) => (
+                    <div 
+                      key={index} 
+                      className="skill-card"
+                      style={{
+                        '--skill-color': skill.color,
+                        '--skill-gradient': skill.gradient,
+                        animationDelay: `${index * 0.1}s`
+                      }}
+                    >
+                      <div className="skill-card-glow"></div>
+                      <div className="skill-icon">{skill.icon}</div>
+                      <div className="skill-name">{skill.name}</div>
                     </div>
-                    
-                    <div className="skills-list">
-                      {category.skills.map((skill, skillIndex) => (
-                        <div 
-                          key={skillIndex} 
-                          className="skill-item"
-                          style={{ animationDelay: `${skillIndex * 0.1}s` }}
-                        >
-                          <div className="skill-info">
-                            <div className="skill-name-wrapper">
-                              {getSkillIcon(skill.name)}
-                              <span className="skill-name">{skill.name}</span>
-                            </div>
-                            <span className="skill-level">{skill.level}%</span>
-                          </div>
-                          <div className="skill-bar">
-                            <div 
-                              className="skill-progress"
-                              style={{ 
-                                width: `${skill.level}%`,
-                                backgroundColor: skill.color
-                              }}
-                            ></div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           )}
