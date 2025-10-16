@@ -6,8 +6,10 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const { isDarkMode, toggleTheme } = useTheme();
   const headerRef = useRef(null);
+  const timeoutRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -53,10 +55,45 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
+  const handleMouseEnter = () => {
+    // Solo su desktop (larghezza > 768px)
+    if (window.innerWidth > 768) {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+      setIsHovered(true);
+      setIsMenuOpen(true);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    // Solo su desktop (larghezza > 768px)
+    if (window.innerWidth > 768) {
+      setIsHovered(false);
+      timeoutRef.current = setTimeout(() => {
+        setIsMenuOpen(false);
+      }, 300); // Ritardo di 300ms prima di chiudere
+    }
+  };
+
+  // Cleanup del timeout quando il componente si smonta
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
 
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''} ${isVisible ? 'visible' : ''}`} ref={headerRef}>
+    <header 
+      className={`header ${isScrolled ? 'scrolled' : ''} ${isVisible ? 'visible' : ''} ${isHovered ? 'hovered' : ''}`} 
+      ref={headerRef}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <div className="header-background">
         <div className="header-pattern"></div>
         <div className="header-particles"></div>

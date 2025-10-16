@@ -19,6 +19,81 @@
   border-bottom: 1px solid var(--border-light);
 }
 
+/* Navbar dinamica - si richiude automaticamente */
+.header {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+}
+
+.header:not(.hovered):not(.scrolled) {
+  transform: translateY(-80%);
+}
+
+.header.hovered {
+  transform: translateY(0);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-lg);
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* Animazione smooth per la navbar */
+.nav {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header:not(.hovered):not(.scrolled) .nav {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.header.hovered .nav,
+.header.scrolled .nav {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Indicatore per la navbar nascosta */
+.header:not(.hovered):not(.scrolled)::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 4px;
+  background: var(--primary-color);
+  border-radius: 2px;
+  opacity: 0.6;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.1);
+  }
+}
+
+/* Disabilita la navbar dinamica su mobile */
+@media (max-width: 768px) {
+  .header:not(.hovered):not(.scrolled) {
+    transform: translateY(0);
+  }
+  
+  .header:not(.hovered):not(.scrolled) .nav {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .header:not(.hovered):not(.scrolled)::after {
+    display: none;
+  }
+}
+
 .header-background {
   position: absolute;
   top: 0;
