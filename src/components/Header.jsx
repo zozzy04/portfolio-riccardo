@@ -91,8 +91,6 @@ const Header = () => {
     <header 
       className={`header ${isScrolled ? 'scrolled' : ''} ${isVisible ? 'visible' : ''} ${isHovered ? 'hovered' : ''}`} 
       ref={headerRef}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
     >
       <div className="header-background">
         <div className="header-pattern"></div>
@@ -111,7 +109,11 @@ const Header = () => {
             </div>
           </div>
 
-          <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
+          <nav 
+            className={`nav ${isMenuOpen ? 'nav-open' : ''}`}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             <div className="nav-container">
               <div className="nav-glow"></div>
               <div className="nav-particles"></div>

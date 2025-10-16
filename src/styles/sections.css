@@ -19,24 +19,7 @@
   border-bottom: 1px solid var(--border-light);
 }
 
-/* Navbar dinamica - si richiude automaticamente */
-.header {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateY(0);
-}
-
-.header:not(.hovered):not(.scrolled) {
-  transform: translateY(-80%);
-}
-
-.header.hovered {
-  transform: translateY(0);
-  background: var(--bg-card);
-  box-shadow: var(--shadow-lg);
-  border-bottom: 1px solid var(--border-light);
-}
-
-/* Animazione smooth per la navbar */
+/* Navbar dinamica - solo il menu si nasconde */
 .nav {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -52,11 +35,11 @@
   transform: translateY(0);
 }
 
-/* Indicatore per la navbar nascosta */
-.header:not(.hovered):not(.scrolled)::after {
+/* Indicatore per il menu nascosto */
+.header:not(.hovered):not(.scrolled) .nav::before {
   content: '';
   position: absolute;
-  bottom: -2px;
+  top: -10px;
   left: 50%;
   transform: translateX(-50%);
   width: 40px;
@@ -80,16 +63,12 @@
 
 /* Disabilita la navbar dinamica su mobile */
 @media (max-width: 768px) {
-  .header:not(.hovered):not(.scrolled) {
-    transform: translateY(0);
-  }
-  
   .header:not(.hovered):not(.scrolled) .nav {
     opacity: 1;
     transform: translateY(0);
   }
   
-  .header:not(.hovered):not(.scrolled)::after {
+  .header:not(.hovered):not(.scrolled) .nav::before {
     display: none;
   }
 }
@@ -5502,13 +5481,13 @@ body {
 .skill-card {
   position: relative;
   flex: 0 0 auto;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -5516,6 +5495,11 @@ body {
 .skill-icon {
   color: var(--text-secondary);
   transition: all 0.3s ease;
+}
+
+.skill-icon svg {
+  width: 32px;
+  height: 32px;
 }
 
 .skill-card:hover .skill-icon {
@@ -5527,12 +5511,12 @@ body {
 }
 
 .skill-name {
-  font-size: 0.6rem;
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 600;
   color: var(--text-secondary);
   text-align: center;
   line-height: 1.1;
-  max-width: 70px;
+  max-width: 90px;
   word-wrap: break-word;
   transition: color 0.3s ease;
 }
@@ -5544,12 +5528,17 @@ body {
 /* Responsive per il carousel infinito */
 @media (max-width: 768px) {
   .skill-card {
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
+  }
+  
+  .skill-icon svg {
+    width: 28px;
+    height: 28px;
   }
   
   .skill-name {
-    font-size: 0.55rem;
+    font-size: 0.7rem;
   }
   
   .skills-carousel {
@@ -5560,12 +5549,17 @@ body {
 
 @media (max-width: 480px) {
   .skill-card {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
+  }
+  
+  .skill-icon svg {
+    width: 24px;
+    height: 24px;
   }
   
   .skill-name {
-    font-size: 0.5rem;
+    font-size: 0.65rem;
   }
   
   .skills-carousel {
