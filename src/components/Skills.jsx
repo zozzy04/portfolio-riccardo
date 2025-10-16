@@ -350,6 +350,7 @@ const Skills = () => {
                       }}
                     >
                       <div className="skill-icon">{skill.icon}</div>
+                      <div className="skill-name">{skill.name}</div>
                     </div>
                   ))}
                 </div>

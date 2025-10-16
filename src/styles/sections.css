@@ -5502,11 +5502,13 @@ body {
 .skill-card {
   position: relative;
   flex: 0 0 auto;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.25rem;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -5524,11 +5526,30 @@ body {
   fill: var(--skill-color);
 }
 
+.skill-name {
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.1;
+  max-width: 70px;
+  word-wrap: break-word;
+  transition: color 0.3s ease;
+}
+
+.skill-card:hover .skill-name {
+  color: var(--skill-color);
+}
+
 /* Responsive per il carousel infinito */
 @media (max-width: 768px) {
   .skill-card {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
+  }
+  
+  .skill-name {
+    font-size: 0.55rem;
   }
   
   .skills-carousel {
@@ -5539,8 +5560,12 @@ body {
 
 @media (max-width: 480px) {
   .skill-card {
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
+  }
+  
+  .skill-name {
+    font-size: 0.5rem;
   }
   
   .skills-carousel {
