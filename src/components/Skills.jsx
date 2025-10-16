@@ -59,111 +59,111 @@ const Skills = () => {
   const technicalSkills = [
     {
       name: 'Python',
-      icon: '🐍',
-      color: '#3776ab',
-      gradient: 'linear-gradient(135deg, #3776ab 0%, #ffd43b 100%)'
+      icon: <Code size={24} />,
+      color: 'var(--primary-color)',
+      gradient: 'var(--gradient-primary)'
     },
     {
       name: 'JavaScript',
-      icon: '⚡',
-      color: '#f7df1e',
-      gradient: 'linear-gradient(135deg, #f7df1e 0%, #000000 100%)'
+      icon: <Zap size={24} />,
+      color: 'var(--accent-color)',
+      gradient: 'var(--gradient-secondary)'
     },
     {
       name: 'React',
-      icon: '⚛️',
-      color: '#61dafb',
-      gradient: 'linear-gradient(135deg, #61dafb 0%, #282c34 100%)'
+      icon: <Globe size={24} />,
+      color: 'var(--primary-color)',
+      gradient: 'var(--gradient-primary)'
     },
     {
       name: 'Node.js',
-      icon: '🟢',
-      color: '#339933',
-      gradient: 'linear-gradient(135deg, #339933 0%, #68a063 100%)'
+      icon: <Cpu size={24} />,
+      color: 'var(--accent-color)',
+      gradient: 'var(--gradient-secondary)'
     },
     {
       name: 'Power BI',
-      icon: '📊',
-      color: '#f2c811',
-      gradient: 'linear-gradient(135deg, #f2c811 0%, #000000 100%)'
+      icon: <BarChart3 size={24} />,
+      color: 'var(--primary-color)',
+      gradient: 'var(--gradient-primary)'
     },
     {
       name: 'Qlik',
-      icon: '🔍',
-      color: '#00b7c3',
-      gradient: 'linear-gradient(135deg, #00b7c3 0%, #ffffff 100%)'
+      icon: <Target size={24} />,
+      color: 'var(--accent-color)',
+      gradient: 'var(--gradient-secondary)'
     },
     {
       name: 'Pandas',
-      icon: '🐼',
-      color: '#150458',
-      gradient: 'linear-gradient(135deg, #150458 0%, #e70488 100%)'
+      icon: <Database size={24} />,
+      color: 'var(--primary-color)',
+      gradient: 'var(--gradient-primary)'
     },
     {
       name: 'Scikit-learn',
-      icon: '🤖',
-      color: '#f7931e',
-      gradient: 'linear-gradient(135deg, #f7931e 0%, #ffffff 100%)'
+      icon: <Brain size={24} />,
+      color: 'var(--accent-color)',
+      gradient: 'var(--gradient-secondary)'
     },
     {
       name: 'SQL',
-      icon: '🗄️',
-      color: '#336791',
-      gradient: 'linear-gradient(135deg, #336791 0%, #ffffff 100%)'
+      icon: <Database size={24} />,
+      color: 'var(--primary-color)',
+      gradient: 'var(--gradient-primary)'
     },
     {
       name: 'Git',
-      icon: '🌿',
-      color: '#f05032',
-      gradient: 'linear-gradient(135deg, #f05032 0%, #ffffff 100%)'
+      icon: <GitBranch size={24} />,
+      color: 'var(--accent-color)',
+      gradient: 'var(--gradient-secondary)'
     },
     {
       name: 'Vite',
-      icon: '⚡',
-      color: '#646cff',
-      gradient: 'linear-gradient(135deg, #646cff 0%, #747bff 100%)'
+      icon: <Rocket size={24} />,
+      color: 'var(--primary-color)',
+      gradient: 'var(--gradient-primary)'
     },
     {
       name: 'Knime',
-      icon: '🔧',
-      color: '#0092cc',
-      gradient: 'linear-gradient(135deg, #0092cc 0%, #ffffff 100%)'
+      icon: <Settings size={24} />,
+      color: 'var(--accent-color)',
+      gradient: 'var(--gradient-secondary)'
     },
     {
       name: 'HTML5',
-      icon: '🌐',
-      color: '#e34f26',
-      gradient: 'linear-gradient(135deg, #e34f26 0%, #f06529 100%)'
+      icon: <Globe size={24} />,
+      color: 'var(--primary-color)',
+      gradient: 'var(--gradient-primary)'
     },
     {
       name: 'CSS3',
-      icon: '🎨',
-      color: '#1572b6',
-      gradient: 'linear-gradient(135deg, #1572b6 0%, #33a9dc 100%)'
+      icon: <Layers size={24} />,
+      color: 'var(--accent-color)',
+      gradient: 'var(--gradient-secondary)'
     },
     {
       name: 'TensorFlow',
-      icon: '🧠',
-      color: '#ff6f00',
-      gradient: 'linear-gradient(135deg, #ff6f00 0%, #ffffff 100%)'
+      icon: <Brain size={24} />,
+      color: 'var(--primary-color)',
+      gradient: 'var(--gradient-primary)'
     },
     {
       name: 'NumPy',
-      icon: '🔢',
-      color: '#4dabcf',
-      gradient: 'linear-gradient(135deg, #4dabcf 0%, #ffffff 100%)'
+      icon: <Cpu size={24} />,
+      color: 'var(--accent-color)',
+      gradient: 'var(--gradient-secondary)'
     },
     {
       name: 'Orange',
-      icon: '🍊',
-      color: '#ff8c00',
-      gradient: 'linear-gradient(135deg, #ff8c00 0%, #ffffff 100%)'
+      icon: <Lightbulb size={24} />,
+      color: 'var(--primary-color)',
+      gradient: 'var(--gradient-primary)'
     },
     {
       name: 'Machine Learning',
-      icon: '🎯',
-      color: '#8b5cf6',
-      gradient: 'linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%)'
+      icon: <TrendingUp size={24} />,
+      color: 'var(--accent-color)',
+      gradient: 'var(--gradient-secondary)'
     }
   ];
 

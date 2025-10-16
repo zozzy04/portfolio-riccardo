@@ -5392,21 +5392,21 @@ body {
   }
 }
 
-/* Skills Carousel Infinito Orizzontale */
+/* Skills Carousel Infinito Orizzontale - Design Moderno */
 .skills-carousel-container {
   position: relative;
   margin-top: 2rem;
   overflow: hidden;
   border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
 }
 
 .skills-carousel {
   display: flex;
-  animation: scroll 30s linear infinite;
-  gap: 1.5rem;
+  animation: scroll 40s linear infinite;
+  gap: 1rem;
   padding: 2rem 0;
   width: max-content;
 }
@@ -5427,9 +5427,10 @@ body {
 .skill-card {
   position: relative;
   flex: 0 0 auto;
-  width: 120px;
-  height: 120px;
-  background: var(--skill-gradient);
+  width: 100px;
+  height: 100px;
+  background: var(--bg-primary);
+  border: 2px solid var(--border-light);
   border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
@@ -5437,19 +5438,12 @@ body {
   justify-content: center;
   gap: 0.5rem;
   cursor: pointer;
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
 }
 
-.skill-card:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.skill-card-glow {
+.skill-card::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -5461,49 +5455,74 @@ body {
   border-radius: var(--radius-lg);
 }
 
+.skill-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 25px rgba(156, 175, 136, 0.2);
+}
+
+.skill-card:hover::before {
+  opacity: 0.1;
+}
+
+.skill-card-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, var(--primary-color), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: var(--radius-lg);
+}
+
 .skill-card:hover .skill-card-glow {
-  opacity: 0.2;
+  opacity: 0.1;
 }
 
 .skill-icon {
-  font-size: 2.5rem;
-  line-height: 1;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+  color: var(--text-primary);
+  transition: all 0.3s ease;
 }
 
 .skill-card:hover .skill-icon {
+  color: var(--primary-color);
   transform: scale(1.1);
 }
 
 .skill-name {
-  font-size: 0.75rem;
+  position: relative;
+  z-index: 2;
+  font-size: 0.7rem;
   font-weight: 600;
-  color: white;
+  color: var(--text-secondary);
   text-align: center;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
   line-height: 1.2;
-  max-width: 100px;
+  max-width: 80px;
   word-wrap: break-word;
+  transition: color 0.3s ease;
+}
+
+.skill-card:hover .skill-name {
+  color: var(--primary-color);
 }
 
 /* Responsive per il carousel infinito */
 @media (max-width: 768px) {
   .skill-card {
-    width: 100px;
-    height: 100px;
-  }
-  
-  .skill-icon {
-    font-size: 2rem;
+    width: 90px;
+    height: 90px;
   }
   
   .skill-name {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
   }
   
   .skills-carousel {
-    gap: 1rem;
+    gap: 0.75rem;
     padding: 1.5rem 0;
   }
 }
@@ -5514,16 +5533,12 @@ body {
     height: 80px;
   }
   
-  .skill-icon {
-    font-size: 1.5rem;
-  }
-  
   .skill-name {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
   }
   
   .skills-carousel {
-    gap: 0.75rem;
+    gap: 0.5rem;
     padding: 1rem 0;
   }
 }
