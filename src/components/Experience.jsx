@@ -8,6 +8,25 @@ const Experience = () => {
   const experiences = [
     {
       icon: <Brain size={24} />,
+      title: 'AI Developer Trainee',
+      company: 'Enernext',
+      companyLink: 'https://enernext.it',
+      location: 'Italia',
+      period: '2025 - Presente',
+      description: 'Tirocinio come AI Developer Trainee presso Enernext, dove sviluppo app e software con AI applicata per soluzioni innovative nel settore energetico.',
+      technologies: ['AI/ML', 'Python', 'React', 'JavaScript', 'Machine Learning', 'Software Development'],
+      achievements: [
+        'Sviluppo di applicazioni con AI applicata',
+        'Creazione di software innovativi per il settore energetico',
+        'Implementazione di soluzioni di Machine Learning',
+        'Collaborazione con team di sviluppo per progetti AI-driven'
+      ],
+      color: '#FF6B35',
+      gradient: 'linear-gradient(135deg, #FF6B35 0%, #F7931E 100%)',
+      category: 'AI Tech'
+    },
+    {
+      icon: <Brain size={24} />,
       title: 'AI Developer & Data Analyst',
       company: 'Espiù S.R.L.',
       companyLink: 'https://espiu.it',
@@ -43,6 +62,25 @@ const Experience = () => {
       color: 'var(--accent-color)',
       gradient: 'linear-gradient(135deg, #6B7C5A 0%, #8A9B7A 100%)',
       category: 'Logistics'
+    },
+    {
+      icon: <Code size={24} />,
+      title: 'Manovale di Cantina',
+      company: 'Opitergium Vini',
+      companyLink: 'https://www.cantinaoderzo.it',
+      location: 'Oderzo, Italia',
+      period: 'Settembre - Ottobre 2025',
+      description: 'Nuova stagione in cantina per la vendemmia 2025. Gestione della produzione vinicola con conferimento uve, lavaggio vasche e gestione spaccio e stoccaggio vini.',
+      technologies: ['Teamwork', 'Organizzazione', 'Precisione', 'Gestione produzione'],
+      achievements: [
+        'Conferimento uve con attenzione alla qualità',
+        'Lavaggio vasche per la produzione vinicola',
+        'Gestione spaccio e stoccaggio vini',
+        'Mantenimento degli standard di qualità aziendali'
+      ],
+      color: '#8B4513',
+      gradient: 'linear-gradient(135deg, #8B4513 0%, #A0522D 100%)',
+      category: 'Wine'
     },
     {
       icon: <Code size={24} />,
@@ -112,6 +150,7 @@ const Experience = () => {
 
   const getCategoryIcon = (category) => {
     switch (category) {
+      case 'AI Tech': return <Brain size={16} />;
       case 'Tech': return <Zap size={16} />;
       case 'Logistics': return <Target size={16} />;
       case 'Wine': return <Code size={16} />;
@@ -218,10 +257,10 @@ const Experience = () => {
         <div className="experience-summary">
           <div className="summary-stats">
             {[
-              { number: '5+', label: 'Esperienze Lavorative' },
+              { number: '6+', label: 'Esperienze Lavorative' },
               { number: '4+', label: 'Anni di Esperienza' },
-              { number: '4+', label: 'Settori Esplorati' },
-              { number: '15+', label: 'Competenze Sviluppate' }
+              { number: '5+', label: 'Settori Esplorati' },
+              { number: '20+', label: 'Competenze Sviluppate' }
             ].map((stat, index) => (
               <div key={index} className="stat-card">
                 <h3>{stat.number}</h3>
