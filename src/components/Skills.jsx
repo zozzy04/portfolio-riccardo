@@ -286,15 +286,14 @@ const Skills = () => {
                     <div 
                       key={index} 
                       className="skill-card"
+                      title={skill.name}
                       style={{
                         '--skill-color': skill.color,
                         '--skill-gradient': skill.gradient,
                         animationDelay: `${index * 0.1}s`
                       }}
                     >
-                      <div className="skill-card-glow"></div>
                       <div className="skill-icon">{skill.icon}</div>
-                      <div className="skill-name">{skill.name}</div>
                     </div>
                   ))}
                 </div>
