@@ -73,6 +73,76 @@
   }
 }
 
+/* Effetto Glass per tutte le carte */
+.experience-card,
+.education-card,
+.project-card,
+.section-card,
+.form-card,
+.skill-category-card,
+.about-section-card,
+.info-card,
+.interests-card,
+.about-description-card {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Effetto hover migliorato per le carte glass */
+.experience-card:hover,
+.education-card:hover,
+.project-card:hover,
+.section-card:hover,
+.form-card:hover,
+.skill-category-card:hover,
+.about-section-card:hover,
+.info-card:hover,
+.interests-card:hover,
+.about-description-card:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-4px) !important;
+}
+
+/* Effetto glass per logo e pulsanti */
+.logo-card,
+.theme-toggle,
+.mobile-menu-btn,
+.nav-container {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+}
+
+.logo-card:hover,
+.theme-toggle:hover,
+.mobile-menu-btn:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Effetto glass per i link di navigazione */
+.nav-link {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
 .header-background {
   position: absolute;
   top: 0;
@@ -5452,9 +5522,11 @@ body {
   margin-top: 2rem;
   overflow: hidden;
   border-radius: var(--radius-lg);
-  background: var(--bg-card);
-  border: 1px solid var(--border-light);
-  box-shadow: var(--shadow-md);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .skills-carousel {
@@ -5490,6 +5562,12 @@ body {
   gap: 0.5rem;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .skill-icon {
@@ -5519,6 +5597,13 @@ body {
   max-width: 90px;
   word-wrap: break-word;
   transition: color 0.3s ease;
+}
+
+.skill-card:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
 }
 
 .skill-card:hover .skill-name {
