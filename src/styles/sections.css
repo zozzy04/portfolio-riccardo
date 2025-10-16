@@ -5442,8 +5442,11 @@ body {
 }
 
 .skill-card:hover .skill-icon {
-  color: var(--primary-color);
   transform: scale(1.2);
+}
+
+.skill-card:hover .skill-icon svg {
+  fill: var(--skill-color);
 }
 
 /* Responsive per il carousel infinito */
