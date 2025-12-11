@@ -1,23 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Send, 
-  CheckCircle, 
-  MessageCircle, 
-  User, 
-  Calendar, 
-  Zap,
-  AtSign,
-  Smartphone,
-  Navigation,
-  Globe,
-  MessageSquare,
-  Users,
-  Sparkles,
-  Activity
-} from 'lucide-react';
+import { Mail, Phone, MapPin, Send, CheckCircle, ArrowRight } from 'lucide-react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -28,24 +14,38 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
   const contactRef = useRef(null);
+  const formRef = useRef(null);
+  const infoRef = useRef(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
+    const ctx = gsap.context(() => {
+      gsap.from(infoRef.current?.children || [], {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        ease: 'power3.out',
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: contactRef.current,
+          start: 'top 80%'
         }
-      },
-      { threshold: 0.1 }
-    );
+      });
 
-    if (contactRef.current) {
-      observer.observe(contactRef.current);
-    }
+      gsap.from(formRef.current, {
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        ease: 'power3.out',
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: contactRef.current,
+          start: 'top 80%'
+        }
+      });
+    }, contactRef);
 
-    return () => observer.disconnect();
+    return () => ctx.revert();
   }, []);
 
   const handleChange = (e) => {
@@ -59,194 +59,94 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulazione invio form
     await new Promise(resolve => setTimeout(resolve, 2000));
     
     setIsSubmitting(false);
     setIsSubmitted(true);
     setFormData({ name: '', email: '', subject: '', message: '' });
     
-    // Reset del messaggio di successo dopo 5 secondi
     setTimeout(() => setIsSubmitted(false), 5000);
   };
 
   const contactInfo = [
     {
-      icon: <AtSign size={24} />,
+      icon: <Mail size={20} />,
       title: 'Email',
       value: 'rzozzolotto@gmail.com',
-      link: 'mailto:rzozzolotto@gmail.com',
-      color: '#3B82F6',
-      gradient: 'linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%)'
+      link: 'mailto:rzozzolotto@gmail.com'
     },
     {
-      icon: <Smartphone size={24} />,
+      icon: <Phone size={20} />,
       title: 'Telefono',
       value: '+39 376 238 1731',
-      link: 'tel:+393762381731',
-      color: '#10B981',
-      gradient: 'linear-gradient(135deg, #10B981 0%, #34D399 100%)'
+      link: 'tel:+393762381731'
     },
     {
-      icon: <Navigation size={24} />,
+      icon: <MapPin size={20} />,
       title: 'Località',
       value: 'Treviso, Italia',
-      link: 'https://maps.google.com/?q=Treviso,Italia',
-      color: '#EF4444',
-      gradient: 'linear-gradient(135deg, #EF4444 0%, #F87171 100%)'
-    }
-  ];
-
-
-
-  const contactFeatures = [
-    {
-      icon: <MessageSquare size={24} />,
-      title: 'Comunicazione Diretta',
-      description: 'Risposta rapida entro 24 ore',
-      color: '#8B5CF6',
-      gradient: 'linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%)'
-    },
-    {
-      icon: <Users size={24} />,
-      title: 'Collaborazioni',
-      description: 'Progetti freelance e full-time',
-      color: '#F59E0B',
-      gradient: 'linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%)'
-    },
-    {
-      icon: <Sparkles size={24} />,
-      title: 'Innovazione',
-      description: 'Focus su AI e Data Science',
-      color: '#06B6D4',
-      gradient: 'linear-gradient(135deg, #06B6D4 0%, #22D3EE 100%)'
+      link: 'https://maps.google.com/?q=Treviso,Italia'
     }
   ];
 
   return (
-    <section id="contact" className="contact" ref={contactRef}>
+    <section id="contact" className="contact section-base" ref={contactRef}>
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">Contatti</h2>
           <p className="section-subtitle">Contattami per collaborazioni e opportunità</p>
         </div>
 
-        <div className={`contact-content ${isVisible ? 'visible' : ''}`}>
-          {/* Contact Features */}
-          <div className="contact-features">
-            {contactFeatures.map((feature, index) => (
-              <div 
-                key={index}
-                className="contact-feature-card"
-                style={{
-                  '--feature-color': feature.color,
-                  '--feature-gradient': feature.gradient,
-                  animationDelay: `${index * 0.2}s`
-                }}
-              >
-                <div className="feature-glow"></div>
-                <div className="feature-particles"></div>
-                
-                <div className="feature-icon" style={{ background: feature.gradient }}>
-                  {feature.icon}
-                </div>
-                
-                <div className="feature-content">
-                  <h4>{feature.title}</h4>
-                  <p>{feature.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
+        <div className="contact-content">
           <div className="contact-main">
-            <div className="contact-info">
-              <div className="info-section">
-                <div className="section-card">
-                  <div className="card-glow"></div>
-                  <div className="card-particles"></div>
-                  
-                  <h3>Informazioni di Contatto</h3>
-                  <p>
-                    Sono sempre interessato a nuove opportunità e collaborazioni. 
-                    Non esitare a contattarmi per discutere di progetti, 
-                    opportunità lavorative o semplicemente per fare networking.
-                  </p>
-                  
-                  <div className="contact-details">
-                    {contactInfo.map((info, index) => (
-                      <div 
-                        key={index} 
-                        className="contact-item"
-                        style={{ animationDelay: `${index * 0.1}s` }}
-                      >
-                        <div className="contact-icon" style={{ background: info.gradient }}>
-                          {info.icon}
-                        </div>
-                        <div className="contact-text">
-                          <h4>{info.title}</h4>
-                          {info.link ? (
-                            <a 
-                              href={info.link} 
-                              className="contact-link"
-                              target={info.link.startsWith('mailto:') || info.link.startsWith('tel:') ? '_self' : '_blank'}
-                              rel={info.link.startsWith('mailto:') || info.link.startsWith('tel:') ? undefined : 'noopener noreferrer'}
-                            >
-                              {info.value}
-                            </a>
-                          ) : (
-                            <span>{info.value}</span>
-                          )}
-                        </div>
+            <div className="contact-info" ref={infoRef}>
+              <div className="info-card card-base">
+                <h3>Informazioni di Contatto</h3>
+                <p className="text-muted">
+                  Sono sempre interessato a nuove opportunità e collaborazioni.
+                </p>
+                
+                <div className="contact-details">
+                  {contactInfo.map((info, index) => (
+                    <div key={index} className="contact-item">
+                      <div className="icon-container">
+                        {info.icon}
                       </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-
-
-              <div className="availability-section">
-                <div className="section-card">
-                  <div className="card-glow"></div>
-                  <div className="card-particles"></div>
-                  
-                  <h3>Disponibilità</h3>
-                  <div className="availability-status">
-                    <div className="status-indicator"></div>
-                    <span>Disponibile per nuove opportunità</span>
-                  </div>
-                  <p>
-                    Attualmente sono disponibile per collaborazioni freelance, 
-                    progetti a tempo determinato e opportunità full-time. 
-                    Sono particolarmente interessato a progetti che coinvolgono 
-                    AI, Machine Learning e Data Analysis.
-                  </p>
+                      <div className="contact-text">
+                        <h4>{info.title}</h4>
+                        {info.link ? (
+                          <a 
+                            href={info.link} 
+                            className="contact-link"
+                            target={info.link.startsWith('mailto:') || info.link.startsWith('tel:') ? '_self' : '_blank'}
+                            rel={info.link.startsWith('mailto:') || info.link.startsWith('tel:') ? undefined : 'noopener noreferrer'}
+                          >
+                            {info.value}
+                          </a>
+                        ) : (
+                          <span>{info.value}</span>
+                        )}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
 
-            <div className="contact-form">
-              <div className="form-card">
-                <div className="card-glow"></div>
-                <div className="card-particles"></div>
-                
+            <div className="contact-form" ref={formRef}>
+              <div className="form-card card-base">
                 <h3>Invia un Messaggio</h3>
                 
                 {isSubmitted && (
                   <div className="success-message">
-                    <div className="success-icon">
-                      <CheckCircle size={20} />
-                    </div>
+                    <CheckCircle size={20} />
                     <span>Messaggio inviato con successo! Ti risponderò presto.</span>
                   </div>
                 )}
                 
                 <form onSubmit={handleSubmit} className="form">
                   <div className="form-group">
-                    <label htmlFor="name">
-                      <span>Nome *</span>
-                    </label>
+                    <label htmlFor="name">Nome *</label>
                     <input
                       type="text"
                       id="name"
@@ -259,9 +159,7 @@ const Contact = () => {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="email">
-                      <span>Email *</span>
-                    </label>
+                    <label htmlFor="email">Email *</label>
                     <input
                       type="email"
                       id="email"
@@ -274,9 +172,7 @@ const Contact = () => {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="subject">
-                      <span>Oggetto *</span>
-                    </label>
+                    <label htmlFor="subject">Oggetto *</label>
                     <input
                       type="text"
                       id="subject"
@@ -289,9 +185,7 @@ const Contact = () => {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="message">
-                      <span>Messaggio *</span>
-                    </label>
+                    <label htmlFor="message">Messaggio *</label>
                     <textarea
                       id="message"
                       name="message"
@@ -305,11 +199,9 @@ const Contact = () => {
 
                   <button
                     type="submit"
-                    className={`btn btn-primary ${isSubmitting ? 'loading' : ''}`}
+                    className={`btn-base btn-primary ${isSubmitting ? 'loading' : ''}`}
                     disabled={isSubmitting}
                   >
-                    <div className="btn-glow"></div>
-                    <div className="btn-particles"></div>
                     {isSubmitting ? (
                       <>
                         <div className="spinner"></div>
@@ -317,8 +209,8 @@ const Contact = () => {
                       </>
                     ) : (
                       <>
-                        <Send size={16} />
-                        Invia Messaggio
+                        <span>Invia Messaggio</span>
+                        <ArrowRight size={18} />
                       </>
                     )}
                   </button>

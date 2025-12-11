@@ -11,39 +11,65 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  /* Brand core - Palette migliorata con migliore contrasto */
-  --color-brand-primary: #3B82F6;
-  --color-brand-primary-soft: #60A5FA;
+  /* Brand core - Palette professionale e coerente */
+  --color-brand-primary: #2563EB;
+  --color-brand-primary-hover: #1D4ED8;
+  --color-brand-primary-light: #3B82F6;
+  --color-brand-primary-lighter: #60A5FA;
   --color-brand-primary-softest: #DBEAFE;
 
-  --color-brand-accent: #F59E0B;
-  --color-brand-accent-soft: #FBBF24;
-  --color-brand-accent-softest: #FEF3C7;
+  --color-brand-accent: #6366F1;
+  --color-brand-accent-hover: #4F46E5;
+  --color-brand-accent-light: #818CF8;
 
-  --color-brand-night-blue: #1E40AF;
-  --color-brand-night-blue-soft: #3B82F6;
+  --color-brand-night-blue: #1E3A8A;
+  --color-brand-night-blue-soft: #2563EB;
   --color-brand-night-blue-softest: #93C5FD;
 
   --color-brand-night: #0F172A;
   --color-brand-night-soft: #1E293B;
   --color-brand-night-softest: #334155;
 
-  /* UI tokens - Background più neutri e moderni */
-  --color-bg-body: #FAFAFA;
-  --color-bg-surface: #FFFFFF;
-  --color-bg-surface-alt: #F8F9FA;
+  /* UI tokens - Background neutri e professionali */
+  --color-bg-body: #FFFFFF;
+  --color-bg-surface: #F8F9FA;
+  --color-bg-surface-alt: #F1F5F9;
+  --color-bg-elevated: #FFFFFF;
 
   --color-text-main: #0F172A;
+  --color-text-secondary: #475569;
   --color-text-muted: #64748B;
   --color-text-on-primary: #FFFFFF;
   --color-text-on-dark: #F8FAFC;
 
   --color-border-subtle: #E2E8F0;
-  --color-border-strong: #1E40AF;
+  --color-border-medium: #CBD5E1;
+  --color-border-strong: #2563EB;
 
-  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Animation timing - Coerente */
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Spacing system - Coerente */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  
+  /* Border radius - Coerente */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
 
   /* Legacy variables for compatibility */
   --bg-primary: var(--color-bg-body);
@@ -90,14 +116,16 @@
 
 /* CSS Variables - Dark Theme */
 [data-theme="dark"] {
-  /* Brand core - Dark theme migliorato */
+  /* Brand core - Dark theme professionale */
   --color-brand-primary: #60A5FA;
-  --color-brand-primary-soft: #93C5FD;
+  --color-brand-primary-hover: #3B82F6;
+  --color-brand-primary-light: #93C5FD;
+  --color-brand-primary-lighter: #BFDBFE;
   --color-brand-primary-softest: #DBEAFE;
 
-  --color-brand-accent: #FBBF24;
-  --color-brand-accent-soft: #FCD34D;
-  --color-brand-accent-softest: #FEF3C7;
+  --color-brand-accent: #818CF8;
+  --color-brand-accent-hover: #6366F1;
+  --color-brand-accent-light: #A5B4FC;
 
   --color-brand-night-blue: #3B82F6;
   --color-brand-night-blue-soft: #60A5FA;
@@ -107,22 +135,26 @@
   --color-brand-night-soft: #1E293B;
   --color-brand-night-softest: #334155;
 
-  /* UI tokens - Dark theme migliorato */
+  /* UI tokens - Dark theme professionale */
   --color-bg-body: #0F172A;
   --color-bg-surface: #1E293B;
   --color-bg-surface-alt: #334155;
+  --color-bg-elevated: #1E293B;
 
   --color-text-main: #F8FAFC;
+  --color-text-secondary: #CBD5E1;
   --color-text-muted: #94A3B8;
   --color-text-on-primary: #FFFFFF;
   --color-text-on-dark: #F8FAFC;
 
   --color-border-subtle: #334155;
+  --color-border-medium: #475569;
   --color-border-strong: #60A5FA;
 
-  --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.3);
   --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
   --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
 
   /* Legacy variables for compatibility */
   --bg-primary: var(--color-bg-body);

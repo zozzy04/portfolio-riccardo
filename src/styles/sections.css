@@ -95,42 +95,7 @@
   }
 }
 
-/* Effetto Glass moderno per tutte le carte */
-.experience-card,
-.education-card,
-.project-card,
-.section-card,
-.form-card,
-.skill-category-card,
-.about-section-card,
-.info-card,
-.interests-card,
-.about-description-card {
-  background: var(--color-bg-surface) !important;
-  backdrop-filter: blur(20px) !important;
-  -webkit-backdrop-filter: blur(20px) !important;
-  border: 1px solid var(--color-border-subtle) !important;
-  box-shadow: var(--shadow-medium) !important;
-  border-radius: 1rem !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-/* Effetto hover migliorato per le carte glass */
-.experience-card:hover,
-.education-card:hover,
-.project-card:hover,
-.section-card:hover,
-.form-card:hover,
-.skill-category-card:hover,
-.about-section-card:hover,
-.info-card:hover,
-.interests-card:hover,
-.about-description-card:hover {
-  background: var(--color-bg-surface) !important;
-  border-color: var(--color-brand-primary) !important;
-  box-shadow: var(--shadow-large) !important;
-  transform: translateY(-4px) scale(1.01) !important;
-}
+/* Card styles ora gestiti da design-system.css e components.css */
 
 /* Rimuovo gli effetti glass per unificare con il background */
 /* Logo semplificato */

@@ -10,6 +10,8 @@ import Footer from './components/Footer';
 import { ThemeProvider } from './context/ThemeContext';
 import './App.css';
 import './styles/sections.css';
+import './styles/design-system.css';
+import './styles/components.css';
 
 // Ottimizzazione dei componenti con React.memo per evitare re-rendering non necessari
 const MemoizedHeader = memo(Header);
