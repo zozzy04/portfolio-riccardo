@@ -1,5 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Mail, Phone, MapPin, CheckCircle, ArrowRight } from 'lucide-react';
+import { contactData } from '../data/portfolioData';
+
+const iconMap = {
+  Mail,
+  Phone,
+  MapPin
+};
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -49,33 +56,17 @@ const Contact = () => {
     setTimeout(() => setIsSubmitted(false), 5000);
   };
 
-  const contactInfo = [
-    {
-      icon: <Mail size={20} />,
-      title: 'Email',
-      value: 'rzozzolotto@gmail.com',
-      link: 'mailto:rzozzolotto@gmail.com'
-    },
-    {
-      icon: <Phone size={20} />,
-      title: 'Telefono',
-      value: '+39 376 238 1731',
-      link: 'tel:+393762381731'
-    },
-    {
-      icon: <MapPin size={20} />,
-      title: 'Località',
-      value: 'Treviso, Italia',
-      link: 'https://maps.google.com/?q=Treviso,Italia'
-    }
-  ];
+  const contactInfo = contactData.info.map(item => ({
+    ...item,
+    icon: React.createElement(iconMap[item.icon], { size: 20 })
+  }));
 
   return (
     <section id="contact" className="contact section-base" ref={contactRef}>
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Contatti</h2>
-          <p className="section-subtitle">Contattami per collaborazioni e opportunità</p>
+          <h2 className="section-title">{contactData.title}</h2>
+          <p className="section-subtitle">{contactData.subtitle}</p>
         </div>
 
         <div className="contact-content">
@@ -84,7 +75,7 @@ const Contact = () => {
               <div className="info-card card-base">
                 <h3>Informazioni di Contatto</h3>
                 <p className="text-muted">
-                  Sono sempre interessato a nuove opportunità e collaborazioni.
+                  {contactData.availability}
                 </p>
                 
                 <div className="contact-details">

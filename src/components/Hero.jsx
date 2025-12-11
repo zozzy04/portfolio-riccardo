@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
+import { personalInfo } from '../data/portfolioData';
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -46,17 +47,21 @@ const Hero = () => {
                 />
               </div>
               <h1 className="hero-title" ref={titleRef}>
-                Riccardo<br />Zozzolotto
+                {personalInfo.name.split(' ').map((name, i, arr) => (
+                  <React.Fragment key={i}>
+                    {name}
+                    {i < arr.length - 1 && <br />}
+                  </React.Fragment>
+                ))}
               </h1>
             </div>
             
             <h2 className="hero-subtitle" ref={subtitleRef}>
-              AI Developer & Data Analyst
+              {personalInfo.title}
             </h2>
             
             <p className="hero-description" ref={descriptionRef}>
-              Trasformo dati e codice in soluzioni intelligenti e funzionali.
-              Specializzato in Machine Learning, Data Analysis e sviluppo di applicazioni data-driven.
+              {personalInfo.description}
             </p>
             
             <div className="hero-actions" ref={buttonRef}>

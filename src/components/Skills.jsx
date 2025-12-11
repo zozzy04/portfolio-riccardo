@@ -1,5 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { School, GraduationCap, BookOpen, Award } from 'lucide-react';
+import { skillsData } from '../data/portfolioData';
+
+const iconMap = {
+  School,
+  GraduationCap
+};
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('education');
@@ -24,32 +30,12 @@ const Skills = () => {
     }
   }, [activeCategory]);
 
-  const educationData = [
-    {
-      icon: <School size={20} />,
-      title: 'ITS Digital Academy',
-      link: 'https://itsdigitalacademy.com',
-      location: 'Treviso, Italia',
-      period: '2023 - 2025',
-      qualification: 'AI Developer & Data Analyst',
-      description: 'Corso biennale specializzato in sviluppo di applicazioni AI e analisi dati. Focus su Python, Machine Learning, Data Visualization e tecnologie moderne.'
-    },
-    {
-      icon: <GraduationCap size={20} />,
-      title: 'Liceo Scientifico Antonio Scarpa',
-      link: 'https://www.antonioscarpa.edu.it',
-      location: 'Motta di Livenza, Italia',
-      period: '2018 - 2023',
-      qualification: 'Diploma di Liceo Scientifico',
-      description: 'Percorso di studi scientifico con focus su matematica, fisica, scienze e informatica. Sviluppo di competenze logiche, analitiche e problem solving.'
-    }
-  ];
+  const educationData = skillsData.education.map(edu => ({
+    ...edu,
+    icon: React.createElement(iconMap[edu.icon], { size: 20 })
+  }));
 
-  const technicalSkills = [
-    'Python', 'JavaScript', 'React', 'Node.js', 'Power BI', 'Qlik',
-    'SQL', 'Git', 'Vite', 'Knime', 'HTML5', 'CSS3', 'Machine Learning',
-    'TensorFlow', 'NumPy', 'Pandas', 'Scikit-learn', 'Orange'
-  ];
+  const technicalSkills = skillsData.technical;
 
   const categories = [
     { id: 'education', name: 'Formazione', icon: <BookOpen size={18} /> },
@@ -60,8 +46,8 @@ const Skills = () => {
     <section id="skills" className="skills section-base" ref={skillsRef}>
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Competenze</h2>
-          <p className="section-subtitle">Le mie competenze tecniche e formative</p>
+          <h2 className="section-title">{skillsData.title}</h2>
+          <p className="section-subtitle">{skillsData.subtitle}</p>
         </div>
 
         <div className="skills-content">

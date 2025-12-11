@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ExternalLink, Github, Code, Database, Globe, ArrowRight } from 'lucide-react';
+import { projectsData } from '../data/portfolioData';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -16,30 +17,8 @@ const Projects = () => {
     }
   }, [activeFilter]);
 
-  const projects = [
-    {
-      title: 'Portfolio Personale',
-      category: 'web',
-      description: 'Portfolio professionale sviluppato con React e Vite. Design moderno e responsive con animazioni fluide, dark mode e ottimizzazioni SEO.',
-      technologies: ['React', 'Vite', 'CSS3', 'JavaScript', 'GSAP'],
-      status: 'completato',
-      liveUrl: 'https://riccardozozzolotto.com',
-      codeUrl: 'https://github.com/zozzy04/portfolio-riccardo'
-    },
-    {
-      title: 'Web App Analisi Fatture Energetiche',
-      category: 'data',
-      description: 'Web application per l\'analisi e l\'estrazione dati con catalogazione e archiviazione da fatture energetiche e del gas. Sistema completo con inserimento dati diretto nel database.',
-      technologies: ['React', 'Node.js', 'Python', 'PostgreSQL', 'Power BI', 'API REST'],
-      status: 'in-sviluppo'
-    }
-  ];
-
-  const filters = [
-    { id: 'all', label: 'Tutti' },
-    { id: 'data', label: 'Data Analysis' },
-    { id: 'web', label: 'Web Development' }
-  ];
+  const projects = projectsData.projects;
+  const filters = projectsData.filters;
 
   const filteredProjects = activeFilter === 'all' 
     ? projects 
@@ -57,8 +36,8 @@ const Projects = () => {
     <section id="projects" className="projects section-base" ref={projectsRef}>
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Progetti</h2>
-          <p className="section-subtitle">I miei lavori più recenti e significativi</p>
+          <h2 className="section-title">{projectsData.title}</h2>
+          <p className="section-subtitle">{projectsData.subtitle}</p>
         </div>
 
         <div className="projects-filters">

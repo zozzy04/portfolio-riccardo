@@ -1,5 +1,18 @@
 import React, { useEffect, useRef } from 'react';
 import { User, Rocket, Code, MapPin, Clock, School, Briefcase, Award, Heart } from 'lucide-react';
+import { aboutData } from '../data/portfolioData';
+
+const iconMap = {
+  User,
+  Rocket,
+  Code,
+  MapPin,
+  Clock,
+  School,
+  Briefcase,
+  Award,
+  Heart
+};
 
 const About = () => {
   const aboutRef = useRef(null);
@@ -32,46 +45,24 @@ const About = () => {
 
   }, []);
 
-  const personalInfo = [
-    { icon: <MapPin size={18} />, label: 'Località', value: 'Treviso, Italia' },
-    { icon: <Clock size={18} />, label: 'Età', value: '21 anni' },
-    { icon: <School size={18} />, label: 'Formazione', value: 'ITS Digital Academy + Liceo Scientifico' },
-    { icon: <Briefcase size={18} />, label: 'Esperienza', value: '2+ anni' }
-  ];
+  const personalInfo = aboutData.personalDetails.map(item => ({
+    ...item,
+    icon: React.createElement(iconMap[item.icon], { size: 18 })
+  }));
 
-  const interests = [
-    { name: 'AI Development' },
-    { name: 'Data Analysis' },
-    { name: 'Machine Learning' },
-    { name: 'Web Development' },
-    { name: 'Automation' },
-    { name: 'Innovation' }
-  ];
+  const interests = aboutData.interests.map(name => ({ name }));
 
-  const aboutSections = [
-    {
-      icon: <User size={20} />,
-      title: 'Chi Sono',
-      description: 'Sono Riccardo, un giovane sviluppatore AI di 21 anni appassionato di tecnologia e innovazione. Mi piace trasformare idee complesse in soluzioni semplici ed efficaci.'
-    },
-    {
-      icon: <Rocket size={20} />,
-      title: 'Il Mio Lavoro',
-      description: 'Lavoro come AI Developer & Data Analyst nell\'Innovation Hub di Espiù S.R.L., dove sviluppo soluzioni intelligenti e analisi dati per ottimizzare i processi aziendali.'
-    },
-    {
-      icon: <Code size={20} />,
-      title: 'Le Mie Competenze',
-      description: 'Mi occupo di analisi, automazione e sviluppo con tecnologie come Python, Power BI, Qlik, Knime, SQL, React/Vite, Orange e altri strumenti moderni.'
-    }
-  ];
+  const aboutSections = aboutData.sections.map(section => ({
+    ...section,
+    icon: React.createElement(iconMap[section.icon], { size: 20 })
+  }));
 
   return (
     <section id="about" className="about section-base" ref={aboutRef}>
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Chi Sono</h2>
-          <p className="section-subtitle">Conosciamoci meglio</p>
+          <h2 className="section-title">{aboutData.title}</h2>
+          <p className="section-subtitle">{aboutData.subtitle}</p>
         </div>
 
         <div className="about-content">

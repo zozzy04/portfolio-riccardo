@@ -1,5 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { Briefcase, MapPin, Brain } from 'lucide-react';
+import { experienceData } from '../data/portfolioData';
+
+const iconMap = {
+  Brain
+};
 
 const Experience = () => {
   const experienceRef = useRef(null);
@@ -15,35 +20,17 @@ const Experience = () => {
     }
   }, []);
 
-  const experiences = [
-    {
-      icon: <Brain size={20} />,
-      title: 'AI Developer Trainee',
-      company: 'Enernext',
-      companyLink: 'https://enernext.it',
-      location: 'Italia',
-      period: '2025 - Presente',
-      description: 'Tirocinio come AI Developer Trainee presso Enernext, dove sviluppo app e software con AI applicata per soluzioni innovative nel settore energetico.',
-      technologies: ['AI/ML', 'Python', 'React', 'JavaScript', 'Machine Learning']
-    },
-    {
-      icon: <Brain size={20} />,
-      title: 'AI Developer & Data Analyst',
-      company: 'Espiù S.R.L.',
-      companyLink: 'https://espiu.it',
-      location: 'Treviso, Italia',
-      period: 'Maggio 2025 - Settembre 2025',
-      description: 'Lavoro nell\'Innovation Hub di Espiù, dove mi occupo di sviluppo di soluzioni AI e analisi dati per ottimizzare i processi aziendali.',
-      technologies: ['Python', 'Power BI', 'Qlik', 'Knime', 'SQL', 'React']
-    }
-  ];
+  const experiences = experienceData.experiences.map(exp => ({
+    ...exp,
+    icon: React.createElement(iconMap[exp.icon], { size: 20 })
+  }));
 
   return (
     <section id="experience" className="experience section-base" ref={experienceRef}>
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Esperienze</h2>
-          <p className="section-subtitle">Il mio percorso professionale</p>
+          <h2 className="section-title">{experienceData.title}</h2>
+          <p className="section-subtitle">{experienceData.subtitle}</p>
         </div>
 
         <div className="experience-grid" ref={cardsRef}>
