@@ -1,35 +1,103 @@
 /* Fix visibilità - Assicura che tutto il contenuto sia sempre visibile */
 
+/* Card e contenitori */
 .about-section-card,
 .info-card,
 .interests-card,
 .project-card,
 .experience-card,
 .education-card,
+.form-card,
 .contact-item,
 .skill-item,
-.interest-item {
+.interest-item,
+.tech-tag,
+.badge-base,
+.category-badge,
+.status-badge {
   opacity: 1 !important;
   transform: translateY(0) !important;
   visibility: visible !important;
+  display: block !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
 }
 
+/* Hero section */
 .hero-title,
 .hero-subtitle,
 .hero-description,
-.hero-actions {
+.hero-actions,
+.hero-content,
+.hero-text {
   opacity: 1 !important;
   transform: translateY(0) !important;
   visibility: visible !important;
+  display: block !important;
 }
 
+/* Grid e contenitori */
 .about-content,
+.about-sections,
+.about-details,
 .contact-content,
+.contact-main,
+.contact-info,
+.contact-form,
 .projects-grid,
+.projects-filters,
 .experience-grid,
 .education-grid,
-.skills-grid {
+.education-section,
+.skills-grid,
+.skills-content,
+.skills-tabs,
+.technical-skills-section {
   opacity: 1 !important;
   visibility: visible !important;
+  display: grid !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Lista e dettagli */
+.info-list,
+.info-item,
+.info-content,
+.contact-details,
+.project-header,
+.project-footer,
+.project-technologies,
+.tech-tags,
+.experience-header,
+.experience-info,
+.experience-technologies,
+.education-header,
+.education-info,
+.education-details {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Testo e paragrafi */
+p, h1, h2, h3, h4, h5, h6, span, a, label, input, textarea {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Icone e container */
+.icon-container,
+.icon-small,
+.section-header-inline,
+.card-header-inline {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
 }
 
