@@ -251,6 +251,7 @@ body {
 
 /* Hero Section - Design minimale e professionale */
 /* Hero Background e Immagine */
+/* Hero Section - Stile Lined */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -258,82 +259,82 @@ body {
   align-items: center;
   overflow: hidden;
   background: var(--color-bg-body);
-  padding-top: 80px;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    padding-top: 70px;
-  }
-}
-
-.hero .container {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-}
-
-.hero-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-.hero-image-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: grayscale(100%) brightness(0.9);
-  transition: filter 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0.3;
-}
-
-.hero:hover .hero-image {
-  filter: grayscale(80%) brightness(0.95);
-  opacity: 0.4;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.95);
-  z-index: 1;
-  pointer-events: none;
-}
-
-[data-theme="dark"] .hero-overlay {
-  background: rgba(0, 0, 0, 0.95);
+  padding-top: 100px;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 4rem var(--container-padding);
+  padding: 6rem var(--container-padding);
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr 1fr;
+    padding: 8rem var(--container-padding);
+  }
+}
+
+.hero-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  order: -1;
+}
+
+@media (min-width: 1024px) {
+  .hero-image-container {
+    order: 2;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    height: 90vh;
+    min-height: auto;
+    z-index: 0;
+  }
+}
+
+.hero-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: grayscale(100%);
+  opacity: 0.15;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (min-width: 1024px) {
+  .hero-portrait {
+    object-fit: cover;
+    object-position: center right;
+    opacity: 0.2;
+  }
+}
+
+.hero:hover .hero-portrait {
+  opacity: 0.25;
+}
+
+[data-theme="dark"] .hero-portrait {
+  filter: grayscale(100%) invert(1);
+  opacity: 0.1;
+}
+
+[data-theme="dark"] .hero:hover .hero-portrait {
+  opacity: 0.15;
 }
 
 @media (min-width: 768px) {
@@ -353,7 +354,13 @@ body {
 .hero-text {
   text-align: left;
   position: relative;
-  z-index: 3;
+  z-index: 2;
+}
+
+@media (min-width: 1024px) {
+  .hero-text {
+    z-index: 3;
+  }
 }
 
 @media (max-width: 768px) {
@@ -394,16 +401,17 @@ body {
 }
 
 .hero-title {
-  font-size: clamp(5rem, 15vw, 12rem);
+  font-size: clamp(4rem, 12vw, 10rem);
   font-weight: 900;
-  line-height: 0.9;
+  line-height: 0.85;
   color: var(--color-text-main);
   margin-bottom: 2rem;
   font-family: var(--font-family-heading);
-  letter-spacing: -0.08em;
+  letter-spacing: -0.1em;
   position: relative;
   z-index: 3;
   text-transform: uppercase;
+  mix-blend-mode: normal;
 }
 
 .hero-title br {
@@ -760,86 +768,7 @@ body {
 }
 
 /* Stili about-section-card ora gestiti da design-system.css e components.css */
-.about-section-card {
-  overflow: visible !important;
-}
-
-.about-section-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--color-bg-surface);
-  border-radius: var(--radius-lg);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.about-section-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-
-.about-section-card:hover::before {
-  opacity: 1;
-}
-
-.about-section-card .card-glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 50% 0%, var(--card-color), transparent 70%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: var(--radius-lg);
-}
-
-.about-section-card:hover .card-glow {
-  opacity: 0.1;
-}
-
-.about-section-card .card-particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-}
-
-.about-section-card .card-particles::before,
-.about-section-card .card-particles::after {
-  content: '';
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: var(--card-color);
-  border-radius: 50%;
-  opacity: 0.3;
-  animation: particleFloat 3s ease-in-out infinite;
-}
-
-.about-section-card .card-particles::before {
-  top: 20%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.about-section-card .card-particles::after {
-  top: 60%;
-  right: 15%;
-  animation-delay: 1.5s;
-}
-
-.about-section-card:hover .card-particles::before,
-.about-section-card:hover .card-particles::after {
-  opacity: 0.6;
-}
+/* Stili about-section-card ora gestiti da design-system.css e components.css */
 
 .about-section-card .section-header {
   display: flex;
@@ -848,42 +777,13 @@ body {
   margin-bottom: 1rem;
 }
 
-.about-section-card .section-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 12px;
-  background: var(--color-brand-primary);
-  color: var(--color-text-on-primary);
-  font-size: 1.5rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 2px 8px rgba(70, 130, 180, 0.2);
-}
-
-.about-section-card:hover .section-icon {
-  transform: scale(1.1) rotate(5deg);
-  box-shadow: 0 4px 16px rgba(70, 130, 180, 0.3);
-  background: var(--color-brand-night-blue);
-}
+/* Stili section-icon ora gestiti da design-system.css */
 
 .about-section-card .section-info {
   flex: 1;
 }
 
-.about-section-card .category-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.25rem 0.75rem;
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--card-color);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: var(--radius-sm);
-  font-size: 0.75rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
+/* Stili category-badge ora gestiti da design-system.css */
 
 .about-section-card .section-title {
   font-size: 1.125rem;
@@ -892,11 +792,7 @@ body {
   margin: 0;
 }
 
-.about-section-card .section-description {
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin: 0;
-}
+/* Stili section-description ora gestiti da components.css */
 
 /* Stili info-card e interests-card ora gestiti da design-system.css e components.css */
 .info-card,
@@ -920,91 +816,9 @@ body {
   transition: opacity 0.3s ease;
 }
 
-.info-card:hover,
-.interests-card:hover,
-.about-description-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
+/* Hover effects ora gestiti da design-system.css */
 
-.info-card:hover::before,
-.interests-card:hover::before,
-.about-description-card:hover::before {
-  opacity: 1;
-}
-
-.info-card .card-glow,
-.interests-card .card-glow,
-.about-description-card .card-glow {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--color-brand-primary);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: var(--radius-lg);
-}
-
-.info-card:hover .card-glow,
-.interests-card:hover .card-glow,
-.about-description-card:hover .card-glow {
-  opacity: 0.1;
-}
-
-.info-card .card-particles,
-.interests-card .card-particles,
-.about-description-card .card-particles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-}
-
-.info-card .card-particles::before,
-.interests-card .card-particles::before,
-.about-description-card .card-particles::before,
-.info-card .card-particles::after,
-.interests-card .card-particles::after,
-.about-description-card .card-particles::after {
-  content: '';
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: var(--primary-color);
-  border-radius: 50%;
-  opacity: 0.3;
-  animation: particleFloat 3s ease-in-out infinite;
-}
-
-.info-card .card-particles::before,
-.interests-card .card-particles::before,
-.about-description-card .card-particles::before {
-  top: 20%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.info-card .card-particles::after,
-.interests-card .card-particles::after,
-.about-description-card .card-particles::after {
-  top: 60%;
-  right: 15%;
-  animation-delay: 1.5s;
-}
-
-.info-card:hover .card-particles::before,
-.interests-card:hover .card-particles::before,
-.about-description-card:hover .card-particles::before,
-.info-card:hover .card-particles::after,
-.interests-card:hover .card-particles::after,
-.about-description-card:hover .card-particles::after {
-  opacity: 0.6;
-}
+/* Stili glow e particles rimossi - ora gestiti da design-system.css */
 
 .card-header {
   display: flex;
@@ -1104,31 +918,7 @@ body {
   gap: 2rem;
 }
 
-.info-card,
-.interests-card {
-  background: var(--bg-card);
-  padding: 2rem;
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--border-light);
-  transition: var(--transition);
-  backdrop-filter: blur(10px);
-  position: relative;
-  overflow: hidden;
-}
-
-.info-card::before,
-.interests-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: var(--color-brand-primary);
-  border-radius: var(--radius-xl);
-  z-index: -1;
-  opacity: 0.05;
-}
+/* Stili info-card e interests-card ora gestiti da design-system.css */
 
 @media (min-width: 768px) {
   .info-card,

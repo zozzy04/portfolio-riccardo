@@ -1,0 +1,73 @@
+/* Cleanup - Rimuove tutti gli stili vecchi e allinea tutto allo stile Lined */
+
+/* Rimuove backdrop-filter e blur */
+.profile-card,
+.scroll-btn,
+.floating-card,
+.about-section-card,
+.info-card,
+.interests-card,
+.project-card,
+.experience-card,
+.education-card,
+.form-card {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Rimuove box-shadow con colori blu */
+.about-section-card .section-icon,
+.info-card h3::after,
+.interests-card h3::after,
+.education-card::before {
+  box-shadow: none !important;
+}
+
+.about-section-card:hover .section-icon,
+.info-card:hover,
+.interests-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Rimuove gradienti e colori blu */
+.about-section-card .section-icon,
+.about-section-card:hover .section-icon {
+  background: var(--color-text-main) !important;
+  color: var(--color-bg-body) !important;
+}
+
+/* Rimuove animazioni particles */
+.about-section-card .card-particles,
+.info-card .card-particles,
+.interests-card .card-particles {
+  display: none !important;
+}
+
+/* Rimuove glow effects */
+.about-section-card .card-glow,
+.info-card .card-glow,
+.interests-card .card-glow {
+  display: none !important;
+}
+
+/* Allinea border-radius a 0 (stile Lined) */
+.profile-card,
+.scroll-btn,
+.floating-card,
+.about-section-card,
+.info-card,
+.interests-card,
+.project-card,
+.experience-card,
+.education-card {
+  border-radius: 0 !important;
+}
+
+/* Rimuove ::before e ::after decorativi */
+.about-section-card::before,
+.info-card::before,
+.interests-card::before,
+.education-card::before {
+  display: none !important;
+}
+
