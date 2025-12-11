@@ -36,9 +36,14 @@ const Hero = () => {
             src="/hero-image.jpg" 
             alt="Riccardo Zozzolotto" 
             className="hero-image"
+            loading="eager"
             onError={(e) => {
-              // Fallback se l'immagine non esiste
+              // Fallback se l'immagine non esiste - mostra solo background gradient
               e.target.style.display = 'none';
+              const wrapper = e.target.parentElement;
+              if (wrapper) {
+                wrapper.style.background = 'linear-gradient(135deg, var(--color-brand-night) 0%, var(--color-brand-night-blue) 100%)';
+              }
             }}
           />
         </div>
