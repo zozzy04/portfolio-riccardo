@@ -30,11 +30,26 @@ const Hero = () => {
 
   return (
     <section id="home" className="hero" ref={heroRef}>
+      <div className="hero-background">
+        <div className="hero-image-wrapper">
+          <img 
+            src="/hero-image.jpg" 
+            alt="Riccardo Zozzolotto" 
+            className="hero-image"
+            onError={(e) => {
+              // Fallback se l'immagine non esiste
+              e.target.style.display = 'none';
+            }}
+          />
+        </div>
+        <div className="hero-overlay"></div>
+      </div>
+      
       <div className="container">
         <div className="hero-content">
           <div className="hero-text">
             <h1 className="hero-title" ref={titleRef}>
-              Riccardo Zozzolotto
+              Riccardo<br />Zozzolotto
             </h1>
             
             <h2 className="hero-subtitle" ref={subtitleRef}>
