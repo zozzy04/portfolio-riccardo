@@ -11,40 +11,40 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  /* Brand core - Blu acciaio e blu notte (stile waqasflow) */
-  --color-brand-primary: #4682B4; /* Blu acciaio */
-  --color-brand-primary-hover: #3A6FA0;
-  --color-brand-primary-light: #5A9FD4;
-  --color-brand-primary-lighter: #7BB3D9;
-  --color-brand-primary-softest: #B8D4E8;
+  /* Brand core - Stile Lined (minimale, neutri) */
+  --color-brand-primary: #000000; /* Nero puro */
+  --color-brand-primary-hover: #1A1A1A;
+  --color-brand-primary-light: #333333;
+  --color-brand-primary-lighter: #666666;
+  --color-brand-primary-softest: #999999;
 
-  --color-brand-accent: #5F9EA0; /* Blu acciaio chiaro */
-  --color-brand-accent-hover: #4A8B8D;
-  --color-brand-accent-light: #7AB5B7;
+  --color-brand-accent: #000000;
+  --color-brand-accent-hover: #1A1A1A;
+  --color-brand-accent-light: #333333;
 
-  --color-brand-night-blue: #1E3A8A; /* Blu notte */
-  --color-brand-night-blue-soft: #2E4A9A;
-  --color-brand-night-blue-softest: #4A6FA8;
+  --color-brand-night-blue: #000000;
+  --color-brand-night-blue-soft: #1A1A1A;
+  --color-brand-night-blue-softest: #333333;
 
-  --color-brand-night: #0A1628; /* Notte profondo */
-  --color-brand-night-soft: #1A2A3A;
-  --color-brand-night-softest: #2A3A4A;
+  --color-brand-night: #000000;
+  --color-brand-night-soft: #1A1A1A;
+  --color-brand-night-softest: #333333;
 
-  /* UI tokens - Background neutri e professionali (stile waqasflow) */
-  --color-bg-body: #FAFBFC;
-  --color-bg-surface: #F5F7FA;
-  --color-bg-surface-alt: #EFF2F7;
+  /* UI tokens - Background neutri (stile Lined) */
+  --color-bg-body: #FFFFFF;
+  --color-bg-surface: #FAFAFA;
+  --color-bg-surface-alt: #F5F5F5;
   --color-bg-elevated: #FFFFFF;
 
-  --color-text-main: #0F172A;
-  --color-text-secondary: #475569;
-  --color-text-muted: #64748B;
+  --color-text-main: #000000;
+  --color-text-secondary: #666666;
+  --color-text-muted: #999999;
   --color-text-on-primary: #FFFFFF;
-  --color-text-on-dark: #F8FAFC;
+  --color-text-on-dark: #FFFFFF;
 
-  --color-border-subtle: #D1D9E6;
-  --color-border-medium: #B8C5D6;
-  --color-border-strong: #4682B4;
+  --color-border-subtle: #E5E5E5;
+  --color-border-medium: #CCCCCC;
+  --color-border-strong: #000000;
 
   --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -116,38 +116,38 @@
 
 /* CSS Variables - Dark Theme */
 [data-theme="dark"] {
-  /* Brand core - Dark theme (blu acciaio e blu notte) */
-  --color-brand-primary: #7BB3D9; /* Blu acciaio chiaro per dark */
-  --color-brand-primary-hover: #5A9FD4;
-  --color-brand-primary-light: #9CC5E3;
-  --color-brand-primary-lighter: #B8D4E8;
-  --color-brand-primary-softest: #D4E6F2;
+  /* Brand core - Dark theme (stile Lined) */
+  --color-brand-primary: #FFFFFF;
+  --color-brand-primary-hover: #E5E5E5;
+  --color-brand-primary-light: #CCCCCC;
+  --color-brand-primary-lighter: #999999;
+  --color-brand-primary-softest: #666666;
 
-  --color-brand-accent: #7AB5B7; /* Blu acciaio chiaro */
-  --color-brand-accent-hover: #5F9EA0;
-  --color-brand-accent-light: #9AC9CB;
+  --color-brand-accent: #FFFFFF;
+  --color-brand-accent-hover: #E5E5E5;
+  --color-brand-accent-light: #CCCCCC;
 
-  --color-brand-night-blue: #4A6FA8; /* Blu notte per dark */
-  --color-brand-night-blue-soft: #5A7FB8;
-  --color-brand-night-blue-softest: #7A9FC8;
+  --color-brand-night-blue: #FFFFFF;
+  --color-brand-night-blue-soft: #E5E5E5;
+  --color-brand-night-blue-softest: #CCCCCC;
 
-  --color-brand-night: #0A1628;
-  --color-brand-night-soft: #1A2A3A;
-  --color-brand-night-softest: #2A3A4A;
+  --color-brand-night: #000000;
+  --color-brand-night-soft: #1A1A1A;
+  --color-brand-night-softest: #333333;
 
-  /* UI tokens - Dark theme professionale */
-  --color-bg-body: #0F172A;
-  --color-bg-surface: #1E293B;
-  --color-bg-surface-alt: #334155;
-  --color-bg-elevated: #1E293B;
+  /* UI tokens - Dark theme (stile Lined) */
+  --color-bg-body: #000000;
+  --color-bg-surface: #1A1A1A;
+  --color-bg-surface-alt: #333333;
+  --color-bg-elevated: #1A1A1A;
 
-  --color-text-main: #F8FAFC;
-  --color-text-secondary: #CBD5E1;
-  --color-text-muted: #94A3B8;
-  --color-text-on-primary: #FFFFFF;
-  --color-text-on-dark: #F8FAFC;
+  --color-text-main: #FFFFFF;
+  --color-text-secondary: #CCCCCC;
+  --color-text-muted: #999999;
+  --color-text-on-primary: #000000;
+  --color-text-on-dark: #FFFFFF;
 
-  --color-border-subtle: #334155;
+  --color-border-subtle: #333333;
   --color-border-medium: #475569;
   --color-border-strong: #60A5FA;
 

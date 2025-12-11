@@ -358,9 +358,9 @@
 
 .form-group input,
 .form-group textarea {
-  padding: 1rem 1.25rem;
-  border: 2px solid var(--color-border-subtle);
-  border-radius: var(--radius-lg);
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 0;
   font-size: 1rem;
   font-family: var(--font-family-base);
   background: var(--color-bg-elevated);
@@ -372,15 +372,14 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--color-brand-primary);
-  box-shadow: 0 0 0 4px rgba(70, 130, 180, 0.1);
+  border-color: var(--color-text-main);
   background: var(--color-bg-body);
-  transform: translateY(-1px);
+  box-shadow: none;
 }
 
 .form-group input:hover,
 .form-group textarea:hover {
-  border-color: var(--color-border-medium);
+  border-color: var(--color-text-main);
 }
 
 .form-group textarea {
