@@ -1,9 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowUp, Heart } from 'lucide-react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
   const [currentYear] = React.useState(new Date().getFullYear());
@@ -11,26 +7,13 @@ const Footer = () => {
   const featuresRef = useRef(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (featuresRef.current?.children) {
-        gsap.set(featuresRef.current.children, { opacity: 1, y: 0 });
-        gsap.from(featuresRef.current.children, {
-          y: 30,
-          opacity: 0,
-          duration: 0.6,
-          ease: 'power3.out',
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: footerRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none none'
-          },
-          immediateRender: false
-        });
-      }
-    }, footerRef);
-
-    return () => ctx.revert();
+    // Assicura che gli elementi siano sempre visibili
+    if (featuresRef.current?.children) {
+      Array.from(featuresRef.current.children).forEach(child => {
+        child.style.opacity = '1';
+        child.style.transform = 'translateY(0)';
+      });
+    }
   }, []);
 
   const scrollToTop = () => {

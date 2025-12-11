@@ -1,9 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { School, GraduationCap, BookOpen, Award } from 'lucide-react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('education');
@@ -12,43 +8,20 @@ const Skills = () => {
   const skillsRefList = useRef(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (educationRef.current?.children) {
-        gsap.set(educationRef.current.children, { opacity: 1, y: 0 });
-        gsap.from(educationRef.current.children, {
-          y: 40,
-          opacity: 0,
-          duration: 0.6,
-          ease: 'power3.out',
-          stagger: 0.15,
-          scrollTrigger: {
-            trigger: skillsRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none none'
-          },
-          immediateRender: false
-        });
-      }
+    // Assicura che gli elementi siano sempre visibili
+    if (educationRef.current?.children) {
+      Array.from(educationRef.current.children).forEach(child => {
+        child.style.opacity = '1';
+        child.style.transform = 'translateY(0)';
+      });
+    }
 
-      if (skillsRefList.current?.children) {
-        gsap.set(skillsRefList.current.children, { opacity: 1, y: 0 });
-        gsap.from(skillsRefList.current.children, {
-          y: 20,
-          opacity: 0,
-          duration: 0.4,
-          ease: 'power3.out',
-          stagger: 0.05,
-          scrollTrigger: {
-            trigger: skillsRefList.current,
-            start: 'top 85%',
-            toggleActions: 'play none none none'
-          },
-          immediateRender: false
-        });
-      }
-    }, skillsRef);
-
-    return () => ctx.revert();
+    if (skillsRefList.current?.children) {
+      Array.from(skillsRefList.current.children).forEach(child => {
+        child.style.opacity = '1';
+        child.style.transform = 'translateY(0)';
+      });
+    }
   }, [activeCategory]);
 
   const educationData = [

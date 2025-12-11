@@ -1,9 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Mail, ArrowRight } from 'lucide-react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -13,54 +9,23 @@ const Hero = () => {
   const buttonRef = useRef(null);
 
   useEffect(() => {
-    if (!titleRef.current || !subtitleRef.current || !descriptionRef.current || !buttonRef.current) return;
-
-    const ctx = gsap.context(() => {
-      // Imposta stato iniziale visibile per fallback
-      gsap.set([titleRef.current, subtitleRef.current, descriptionRef.current, buttonRef.current], {
-        opacity: 1,
-        y: 0
-      });
-
-      // Anima da stato iniziale
-      gsap.from(titleRef.current, {
-        y: 60,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        delay: 0.2,
-        immediateRender: false
-      });
-
-      gsap.from(subtitleRef.current, {
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        delay: 0.4,
-        immediateRender: false
-      });
-
-      gsap.from(descriptionRef.current, {
-        y: 40,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        delay: 0.6,
-        immediateRender: false
-      });
-
-      gsap.from(buttonRef.current, {
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        delay: 0.8,
-        immediateRender: false
-      });
-    }, heroRef);
-
-    return () => ctx.revert();
+    // Assicura che gli elementi siano sempre visibili
+    if (titleRef.current) {
+      titleRef.current.style.opacity = '1';
+      titleRef.current.style.transform = 'translateY(0)';
+    }
+    if (subtitleRef.current) {
+      subtitleRef.current.style.opacity = '1';
+      subtitleRef.current.style.transform = 'translateY(0)';
+    }
+    if (descriptionRef.current) {
+      descriptionRef.current.style.opacity = '1';
+      descriptionRef.current.style.transform = 'translateY(0)';
+    }
+    if (buttonRef.current) {
+      buttonRef.current.style.opacity = '1';
+      buttonRef.current.style.transform = 'translateY(0)';
+    }
   }, []);
 
   return (

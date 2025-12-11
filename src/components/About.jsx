@@ -1,9 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { User, Rocket, Code, MapPin, Clock, School, Briefcase, Award, Heart } from 'lucide-react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const aboutRef = useRef(null);
@@ -12,61 +8,28 @@ const About = () => {
   const interestsRef = useRef(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Assicura che gli elementi siano visibili di default
-      if (sectionsRef.current?.children) {
-        gsap.set(sectionsRef.current.children, { opacity: 1, y: 0 });
-        gsap.from(sectionsRef.current.children, {
-          y: 40,
-          opacity: 0,
-          duration: 0.6,
-          ease: 'power3.out',
-          stagger: 0.15,
-          scrollTrigger: {
-            trigger: aboutRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none none'
-          },
-          immediateRender: false
-        });
-      }
+    // Assicura che gli elementi siano sempre visibili
+    if (sectionsRef.current?.children) {
+      Array.from(sectionsRef.current.children).forEach(child => {
+        child.style.opacity = '1';
+        child.style.transform = 'translateY(0)';
+      });
+    }
 
-      if (infoRef.current?.children) {
-        gsap.set(infoRef.current.children, { opacity: 1, y: 0 });
-        gsap.from(infoRef.current.children, {
-          y: 30,
-          opacity: 0,
-          duration: 0.5,
-          ease: 'power3.out',
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: infoRef.current,
-            start: 'top 85%',
-            toggleActions: 'play none none none'
-          },
-          immediateRender: false
-        });
-      }
+    if (infoRef.current?.children) {
+      Array.from(infoRef.current.children).forEach(child => {
+        child.style.opacity = '1';
+        child.style.transform = 'translateY(0)';
+      });
+    }
 
-      if (interestsRef.current?.children) {
-        gsap.set(interestsRef.current.children, { opacity: 1, y: 0 });
-        gsap.from(interestsRef.current.children, {
-          y: 20,
-          opacity: 0,
-          duration: 0.4,
-          ease: 'power3.out',
-          stagger: 0.05,
-          scrollTrigger: {
-            trigger: interestsRef.current,
-            start: 'top 85%',
-            toggleActions: 'play none none none'
-          },
-          immediateRender: false
-        });
-      }
-    }, aboutRef);
+    if (interestsRef.current?.children) {
+      Array.from(interestsRef.current.children).forEach(child => {
+        child.style.opacity = '1';
+        child.style.transform = 'translateY(0)';
+      });
+    }
 
-    return () => ctx.revert();
   }, []);
 
   const personalInfo = [

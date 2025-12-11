@@ -1,0 +1,35 @@
+/* Fix visibilità - Assicura che tutto il contenuto sia sempre visibile */
+
+.about-section-card,
+.info-card,
+.interests-card,
+.project-card,
+.experience-card,
+.education-card,
+.contact-item,
+.skill-item,
+.interest-item {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  visibility: visible !important;
+}
+
+.hero-title,
+.hero-subtitle,
+.hero-description,
+.hero-actions {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  visibility: visible !important;
+}
+
+.about-content,
+.contact-content,
+.projects-grid,
+.experience-grid,
+.education-grid,
+.skills-grid {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+

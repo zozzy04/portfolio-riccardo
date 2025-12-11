@@ -12,6 +12,7 @@ import './App.css';
 import './styles/sections.css';
 import './styles/design-system.css';
 import './styles/components.css';
+import './styles/visibility-fix.css';
 
 // Ottimizzazione dei componenti con React.memo per evitare re-rendering non necessari
 const MemoizedHeader = memo(Header);

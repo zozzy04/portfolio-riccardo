@@ -1,9 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Mail, Phone, MapPin, Send, CheckCircle, ArrowRight } from 'lucide-react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import { Mail, Phone, MapPin, CheckCircle, ArrowRight } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -19,43 +15,18 @@ const Contact = () => {
   const infoRef = useRef(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (infoRef.current?.children) {
-        gsap.set(infoRef.current.children, { opacity: 1, y: 0 });
-        gsap.from(infoRef.current.children, {
-          y: 30,
-          opacity: 0,
-          duration: 0.6,
-          ease: 'power3.out',
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: contactRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none none'
-          },
-          immediateRender: false
-        });
-      }
+    // Assicura che gli elementi siano sempre visibili
+    if (infoRef.current?.children) {
+      Array.from(infoRef.current.children).forEach(child => {
+        child.style.opacity = '1';
+        child.style.transform = 'translateY(0)';
+      });
+    }
 
-      if (formRef.current) {
-        gsap.set(formRef.current, { opacity: 1, y: 0 });
-        gsap.from(formRef.current, {
-          y: 30,
-          opacity: 0,
-          duration: 0.6,
-          ease: 'power3.out',
-          delay: 0.2,
-          scrollTrigger: {
-            trigger: contactRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none none'
-          },
-          immediateRender: false
-        });
-      }
-    }, contactRef);
-
-    return () => ctx.revert();
+    if (formRef.current) {
+      formRef.current.style.opacity = '1';
+      formRef.current.style.transform = 'translateY(0)';
+    }
   }, []);
 
   const handleChange = (e) => {

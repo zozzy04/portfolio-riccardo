@@ -1,35 +1,18 @@
 import React, { useEffect, useRef } from 'react';
-import { Briefcase, MapPin, Calendar, ExternalLink, Brain } from 'lucide-react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import { Briefcase, MapPin, Brain } from 'lucide-react';
 
 const Experience = () => {
   const experienceRef = useRef(null);
   const cardsRef = useRef(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      if (cardsRef.current?.children) {
-        gsap.set(cardsRef.current.children, { opacity: 1, y: 0 });
-        gsap.from(cardsRef.current.children, {
-          y: 40,
-          opacity: 0,
-          duration: 0.6,
-          ease: 'power3.out',
-          stagger: 0.15,
-          scrollTrigger: {
-            trigger: experienceRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none none'
-          },
-          immediateRender: false
-        });
-      }
-    }, experienceRef);
-
-    return () => ctx.revert();
+    // Assicura che gli elementi siano sempre visibili
+    if (cardsRef.current?.children) {
+      Array.from(cardsRef.current.children).forEach(card => {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      });
+    }
   }, []);
 
   const experiences = [
