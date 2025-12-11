@@ -11,29 +11,29 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  /* Brand core - Palette professionale e coerente */
-  --color-brand-primary: #2563EB;
-  --color-brand-primary-hover: #1D4ED8;
-  --color-brand-primary-light: #3B82F6;
-  --color-brand-primary-lighter: #60A5FA;
-  --color-brand-primary-softest: #DBEAFE;
+  /* Brand core - Blu acciaio e blu notte (stile waqasflow) */
+  --color-brand-primary: #4682B4; /* Blu acciaio */
+  --color-brand-primary-hover: #3A6FA0;
+  --color-brand-primary-light: #5A9FD4;
+  --color-brand-primary-lighter: #7BB3D9;
+  --color-brand-primary-softest: #B8D4E8;
 
-  --color-brand-accent: #6366F1;
-  --color-brand-accent-hover: #4F46E5;
-  --color-brand-accent-light: #818CF8;
+  --color-brand-accent: #5F9EA0; /* Blu acciaio chiaro */
+  --color-brand-accent-hover: #4A8B8D;
+  --color-brand-accent-light: #7AB5B7;
 
-  --color-brand-night-blue: #1E3A8A;
-  --color-brand-night-blue-soft: #2563EB;
-  --color-brand-night-blue-softest: #93C5FD;
+  --color-brand-night-blue: #1E3A8A; /* Blu notte */
+  --color-brand-night-blue-soft: #2E4A9A;
+  --color-brand-night-blue-softest: #4A6FA8;
 
-  --color-brand-night: #0F172A;
-  --color-brand-night-soft: #1E293B;
-  --color-brand-night-softest: #334155;
+  --color-brand-night: #0A1628; /* Notte profondo */
+  --color-brand-night-soft: #1A2A3A;
+  --color-brand-night-softest: #2A3A4A;
 
-  /* UI tokens - Background neutri e professionali */
-  --color-bg-body: #FFFFFF;
-  --color-bg-surface: #F8F9FA;
-  --color-bg-surface-alt: #F1F5F9;
+  /* UI tokens - Background neutri e professionali (stile waqasflow) */
+  --color-bg-body: #FAFBFC;
+  --color-bg-surface: #F5F7FA;
+  --color-bg-surface-alt: #EFF2F7;
   --color-bg-elevated: #FFFFFF;
 
   --color-text-main: #0F172A;
@@ -42,9 +42,9 @@
   --color-text-on-primary: #FFFFFF;
   --color-text-on-dark: #F8FAFC;
 
-  --color-border-subtle: #E2E8F0;
-  --color-border-medium: #CBD5E1;
-  --color-border-strong: #2563EB;
+  --color-border-subtle: #D1D9E6;
+  --color-border-medium: #B8C5D6;
+  --color-border-strong: #4682B4;
 
   --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -116,24 +116,24 @@
 
 /* CSS Variables - Dark Theme */
 [data-theme="dark"] {
-  /* Brand core - Dark theme professionale */
-  --color-brand-primary: #60A5FA;
-  --color-brand-primary-hover: #3B82F6;
-  --color-brand-primary-light: #93C5FD;
-  --color-brand-primary-lighter: #BFDBFE;
-  --color-brand-primary-softest: #DBEAFE;
+  /* Brand core - Dark theme (blu acciaio e blu notte) */
+  --color-brand-primary: #7BB3D9; /* Blu acciaio chiaro per dark */
+  --color-brand-primary-hover: #5A9FD4;
+  --color-brand-primary-light: #9CC5E3;
+  --color-brand-primary-lighter: #B8D4E8;
+  --color-brand-primary-softest: #D4E6F2;
 
-  --color-brand-accent: #818CF8;
-  --color-brand-accent-hover: #6366F1;
-  --color-brand-accent-light: #A5B4FC;
+  --color-brand-accent: #7AB5B7; /* Blu acciaio chiaro */
+  --color-brand-accent-hover: #5F9EA0;
+  --color-brand-accent-light: #9AC9CB;
 
-  --color-brand-night-blue: #3B82F6;
-  --color-brand-night-blue-soft: #60A5FA;
-  --color-brand-night-blue-softest: #93C5FD;
+  --color-brand-night-blue: #4A6FA8; /* Blu notte per dark */
+  --color-brand-night-blue-soft: #5A7FB8;
+  --color-brand-night-blue-softest: #7A9FC8;
 
-  --color-brand-night: #0F172A;
-  --color-brand-night-soft: #1E293B;
-  --color-brand-night-softest: #334155;
+  --color-brand-night: #0A1628;
+  --color-brand-night-soft: #1A2A3A;
+  --color-brand-night-softest: #2A3A4A;
 
   /* UI tokens - Dark theme professionale */
   --color-bg-body: #0F172A;
