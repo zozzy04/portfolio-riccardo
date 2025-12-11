@@ -337,17 +337,7 @@ body {
   opacity: 0.15;
 }
 
-@media (min-width: 768px) {
-  .hero-content {
-    padding: 6rem var(--container-padding);
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-content {
-    padding: 8rem var(--container-padding);
-  }
-}
+/* Media queries per hero-content già definite sopra */
 
 /* Rimossi badge e elementi superflui per design minimale */
 
