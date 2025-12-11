@@ -11,17 +11,22 @@ const Experience = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(cardsRef.current?.children || [], {
-        y: 40,
-        opacity: 0,
-        duration: 0.6,
-        ease: 'power3.out',
-        stagger: 0.15,
-        scrollTrigger: {
-          trigger: experienceRef.current,
-          start: 'top 80%'
-        }
-      });
+      if (cardsRef.current?.children) {
+        gsap.set(cardsRef.current.children, { opacity: 1, y: 0 });
+        gsap.from(cardsRef.current.children, {
+          y: 40,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power3.out',
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: experienceRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          },
+          immediateRender: false
+        });
+      }
     }, experienceRef);
 
     return () => ctx.revert();

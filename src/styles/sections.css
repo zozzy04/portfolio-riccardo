@@ -101,7 +101,7 @@
 /* Logo semplificato */
 .logo-link {
   text-decoration: none;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   transition: color 0.3s ease;
 }
 
@@ -178,7 +178,7 @@
 }
 
 .nav-link:hover {
-  color: var(--text-primary);
+  color: var(--color-text-main);
 }
 
 .nav-link:hover::after {
@@ -207,7 +207,7 @@
 
 .theme-toggle:hover,
 .mobile-menu-btn:hover {
-  color: var(--text-primary);
+  color: var(--color-text-main);
   background: var(--color-bg-surface-alt);
 }
 
@@ -282,7 +282,7 @@ body {
   font-size: clamp(3rem, 8vw, 6rem);
   font-weight: 700;
   line-height: 1.1;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   margin-bottom: 1.5rem;
   font-family: var(--font-family-heading);
   letter-spacing: -0.04em;
@@ -352,7 +352,7 @@ body {
 
 .btn-secondary {
   background: transparent;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   border: 1px solid var(--color-border-subtle);
 }
 
@@ -448,7 +448,7 @@ body {
 .profile-info h3 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   margin-bottom: 0.5rem;
 }
 
@@ -500,7 +500,7 @@ body {
   gap: 0.5rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   animation: float 6s ease-in-out infinite;
 }
 
@@ -533,7 +533,7 @@ body {
 .scroll-btn {
   background: var(--bg-card);
   border: 1px solid var(--border-light);
-  color: var(--text-primary);
+  color: var(--color-text-main);
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -587,20 +587,7 @@ body {
   z-index: 2;
 }
 
-.about-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  margin-top: 3rem;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-}
-
-.about-content.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* About content styles ora in components.css */
 
 @media (min-width: 1024px) {
   .about-content {
@@ -761,7 +748,7 @@ body {
 .about-section-card .section-title {
   font-size: 1.125rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   margin: 0;
 }
 
@@ -898,7 +885,7 @@ body {
 .card-header h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   margin: 0;
 }
 
@@ -1028,7 +1015,7 @@ body {
 .interests-card h3 {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
@@ -1126,7 +1113,7 @@ body {
 
 .info-value {
   font-size: 0.875rem;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   font-weight: 600;
 }
 
@@ -1210,7 +1197,7 @@ body {
 .interest-name {
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-main);
 }
 
 @media (min-width: 768px) {
@@ -1554,7 +1541,7 @@ body {
 .section-subheader h3 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--color-text-main);
 }
 
 @media (min-width: 768px) {
@@ -1654,7 +1641,7 @@ body {
 .education-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   margin-bottom: 0.5rem;
 }
 
@@ -1694,7 +1681,7 @@ body {
 .education-qualification {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   margin-bottom: 0.75rem;
 }
 
@@ -1981,7 +1968,7 @@ body {
 .category-header h4 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-main);
 }
 
 @media (min-width: 768px) {
@@ -2031,7 +2018,7 @@ body {
 
 .skill-name {
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   font-size: 0.875rem;
 }
 
@@ -2320,7 +2307,7 @@ body {
 .project-title {
   font-size: clamp(1.25rem, 2vw, 1.5rem);
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   flex: 1;
   min-width: 200px;
   font-family: var(--font-family-heading);
@@ -2377,7 +2364,7 @@ body {
 .project-features h4 {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   margin-bottom: 1rem;
 }
 
@@ -2408,7 +2395,7 @@ body {
 }
 
 .feature-item:hover {
-  color: var(--text-primary);
+  color: var(--color-text-main);
   transform: translateX(5px);
 }
 
@@ -2508,19 +2495,7 @@ body {
   }
 }
 
-.contact-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-}
-
-.contact-content.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* Contact content styles ora in components.css */
 
 @media (min-width: 1024px) {
   .contact-content {
@@ -2650,7 +2625,7 @@ body {
 .contact-feature-card .feature-content h4 {
   font-size: 1.125rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   margin-bottom: 0.5rem;
 }
 
@@ -2794,7 +2769,7 @@ body {
 .availability-section h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
@@ -2892,7 +2867,7 @@ body {
 .contact-text h4 {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   margin-bottom: 0.25rem;
 }
 
@@ -2950,7 +2925,7 @@ body {
   gap: 0.75rem;
   padding: 1rem 1.5rem;
   background: var(--bg-glass);
-  color: var(--text-primary);
+  color: var(--color-text-main);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   text-decoration: none;
@@ -2987,7 +2962,7 @@ body {
 
 .social-link.bg-pink-500 {
   background: #B8C9A8;
-  color: var(--text-primary);
+  color: var(--color-text-main);
 }
 
 .social-link.bg-blue-500 {
@@ -3039,7 +3014,7 @@ body {
 .contact-form h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
@@ -3066,7 +3041,7 @@ body {
 
 .form-group label {
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -3088,7 +3063,7 @@ body {
   transition: var(--transition);
   font-family: inherit;
   background: var(--bg-primary);
-  color: var(--text-primary);
+  color: var(--color-text-main);
 }
 
 @media (min-width: 768px) {
@@ -3151,7 +3126,7 @@ body {
 .footer-section h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   margin-bottom: 1rem;
 }
 
@@ -3164,7 +3139,7 @@ body {
 .footer-section h4 {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   margin-bottom: 0.75rem;
 }
 
@@ -3229,7 +3204,7 @@ body {
   width: 40px;
   height: 40px;
   background: var(--bg-glass);
-  color: var(--text-primary);
+  color: var(--color-text-main);
   border-radius: var(--radius-md);
   transition: var(--transition);
   border: 1px solid var(--border-light);
@@ -3722,7 +3697,7 @@ body {
 .experience-title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   margin-bottom: 0.5rem;
 }
 
@@ -3798,7 +3773,7 @@ body {
 .experience-achievements h4 {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   margin-bottom: 1rem;
 }
 
@@ -3819,7 +3794,7 @@ body {
 .tech-tag {
   padding: 0.25rem 0.75rem;
   background: var(--bg-glass);
-  color: var(--text-primary);
+  color: var(--color-text-main);
   border-radius: var(--radius-sm);
   font-size: 0.75rem;
   font-weight: 500;
@@ -3874,7 +3849,7 @@ body {
 }
 
 .achievement-item:hover {
-  color: var(--text-primary);
+  color: var(--color-text-main);
   transform: translateX(8px);
 }
 
@@ -4149,7 +4124,7 @@ body {
 
 .info-value {
   font-size: 1rem;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   font-weight: 600;
 }
 
@@ -4219,7 +4194,7 @@ body {
 
 .interest-name {
   font-size: 0.875rem;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   font-weight: 500;
 }
 
@@ -4357,7 +4332,7 @@ body {
   gap: 0.5rem;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   animation: float 6s ease-in-out infinite;
   position: relative;
   overflow: hidden;
@@ -4577,7 +4552,7 @@ body {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
-  color: var(--text-primary);
+  color: var(--color-text-main);
   text-decoration: none;
   font-weight: 500;
   transition: var(--transition);
@@ -4843,7 +4818,7 @@ body {
 .footer-feature-card .feature-content h4 {
   font-size: 1.125rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--color-text-main);
   margin-bottom: 0.5rem;
 }
 
@@ -5076,7 +5051,7 @@ body {
   border-radius: 50%;
   background: var(--bg-card);
   border: 1px solid var(--border-light);
-  color: var(--text-primary);
+  color: var(--color-text-main);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;

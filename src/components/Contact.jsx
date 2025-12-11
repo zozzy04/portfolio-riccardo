@@ -20,29 +20,39 @@ const Contact = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(infoRef.current?.children || [], {
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        ease: 'power3.out',
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: contactRef.current,
-          start: 'top 80%'
-        }
-      });
+      if (infoRef.current?.children) {
+        gsap.set(infoRef.current.children, { opacity: 1, y: 0 });
+        gsap.from(infoRef.current.children, {
+          y: 30,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power3.out',
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: contactRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          },
+          immediateRender: false
+        });
+      }
 
-      gsap.from(formRef.current, {
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        ease: 'power3.out',
-        delay: 0.2,
-        scrollTrigger: {
-          trigger: contactRef.current,
-          start: 'top 80%'
-        }
-      });
+      if (formRef.current) {
+        gsap.set(formRef.current, { opacity: 1, y: 0 });
+        gsap.from(formRef.current, {
+          y: 30,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power3.out',
+          delay: 0.2,
+          scrollTrigger: {
+            trigger: contactRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          },
+          immediateRender: false
+        });
+      }
     }, contactRef);
 
     return () => ctx.revert();

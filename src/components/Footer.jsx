@@ -12,17 +12,22 @@ const Footer = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(featuresRef.current?.children || [], {
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        ease: 'power3.out',
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: footerRef.current,
-          start: 'top 80%'
-        }
-      });
+      if (featuresRef.current?.children) {
+        gsap.set(featuresRef.current.children, { opacity: 1, y: 0 });
+        gsap.from(featuresRef.current.children, {
+          y: 30,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power3.out',
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: footerRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          },
+          immediateRender: false
+        });
+      }
     }, footerRef);
 
     return () => ctx.revert();

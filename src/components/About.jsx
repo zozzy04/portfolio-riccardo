@@ -13,41 +13,57 @@ const About = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(sectionsRef.current?.children || [], {
-        y: 40,
-        opacity: 0,
-        duration: 0.6,
-        ease: 'power3.out',
-        stagger: 0.15,
-        scrollTrigger: {
-          trigger: aboutRef.current,
-          start: 'top 80%'
-        }
-      });
+      // Assicura che gli elementi siano visibili di default
+      if (sectionsRef.current?.children) {
+        gsap.set(sectionsRef.current.children, { opacity: 1, y: 0 });
+        gsap.from(sectionsRef.current.children, {
+          y: 40,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power3.out',
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: aboutRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          },
+          immediateRender: false
+        });
+      }
 
-      gsap.from(infoRef.current?.children || [], {
-        y: 30,
-        opacity: 0,
-        duration: 0.5,
-        ease: 'power3.out',
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: infoRef.current,
-          start: 'top 85%'
-        }
-      });
+      if (infoRef.current?.children) {
+        gsap.set(infoRef.current.children, { opacity: 1, y: 0 });
+        gsap.from(infoRef.current.children, {
+          y: 30,
+          opacity: 0,
+          duration: 0.5,
+          ease: 'power3.out',
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: infoRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          },
+          immediateRender: false
+        });
+      }
 
-      gsap.from(interestsRef.current?.children || [], {
-        y: 20,
-        opacity: 0,
-        duration: 0.4,
-        ease: 'power3.out',
-        stagger: 0.05,
-        scrollTrigger: {
-          trigger: interestsRef.current,
-          start: 'top 85%'
-        }
-      });
+      if (interestsRef.current?.children) {
+        gsap.set(interestsRef.current.children, { opacity: 1, y: 0 });
+        gsap.from(interestsRef.current.children, {
+          y: 20,
+          opacity: 0,
+          duration: 0.4,
+          ease: 'power3.out',
+          stagger: 0.05,
+          scrollTrigger: {
+            trigger: interestsRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          },
+          immediateRender: false
+        });
+      }
     }, aboutRef);
 
     return () => ctx.revert();

@@ -13,29 +13,39 @@ const Skills = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from(educationRef.current?.children || [], {
-        y: 40,
-        opacity: 0,
-        duration: 0.6,
-        ease: 'power3.out',
-        stagger: 0.15,
-        scrollTrigger: {
-          trigger: skillsRef.current,
-          start: 'top 80%'
-        }
-      });
+      if (educationRef.current?.children) {
+        gsap.set(educationRef.current.children, { opacity: 1, y: 0 });
+        gsap.from(educationRef.current.children, {
+          y: 40,
+          opacity: 0,
+          duration: 0.6,
+          ease: 'power3.out',
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: skillsRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none none'
+          },
+          immediateRender: false
+        });
+      }
 
-      gsap.from(skillsRefList.current?.children || [], {
-        y: 20,
-        opacity: 0,
-        duration: 0.4,
-        ease: 'power3.out',
-        stagger: 0.05,
-        scrollTrigger: {
-          trigger: skillsRefList.current,
-          start: 'top 85%'
-        }
-      });
+      if (skillsRefList.current?.children) {
+        gsap.set(skillsRefList.current.children, { opacity: 1, y: 0 });
+        gsap.from(skillsRefList.current.children, {
+          y: 20,
+          opacity: 0,
+          duration: 0.4,
+          ease: 'power3.out',
+          stagger: 0.05,
+          scrollTrigger: {
+            trigger: skillsRefList.current,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          },
+          immediateRender: false
+        });
+      }
     }, skillsRef);
 
     return () => ctx.revert();
@@ -136,8 +146,8 @@ const Skills = () => {
                 {technicalSkills.map((skill, index) => (
                   <div key={index} className="skill-item badge-base">
                     {skill}
-                  </div>
-                ))}
+                    </div>
+                  ))}
               </div>
             </div>
           )}
