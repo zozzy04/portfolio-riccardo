@@ -1,33 +1,39 @@
 /* Design System - Coerenza visiva completa */
 
-/* Card System - Stile Lined (minimale) */
+/* Card System - Stile Lined (minimale, ridimensionato) */
 .card-base {
   background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border-subtle);
+  border: 2px solid var(--color-border-subtle);
   border-radius: 0;
-  padding: var(--spacing-2xl);
+  padding: 3rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: none;
   overflow: visible !important;
   min-height: auto !important;
 }
 
-.card-base:hover {
-  border-color: var(--color-text-main);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+@media (min-width: 768px) {
+  .card-base {
+    padding: 4rem;
+  }
 }
 
-/* Icon System - Stile Lined (minimale) */
+.card-base:hover {
+  border-color: var(--color-text-main);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Icon System - Stile Lined (minimale, ridimensionato) */
 .icon-container {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 0;
   background: transparent;
-  border: 1px solid var(--color-text-main);
+  border: 2px solid var(--color-text-main);
   color: var(--color-text-main);
   transition: all var(--transition-base);
 }
@@ -38,20 +44,32 @@
   transform: scale(1.05);
 }
 
-/* Badge System - Stile Lined (minimale) */
+.icon-small {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Badge System - Stile Lined (minimale, ridimensionato) */
 .badge-base {
   display: inline-flex;
   align-items: center;
-  gap: var(--spacing-xs);
-  padding: var(--spacing-xs) var(--spacing-md);
+  gap: var(--spacing-sm);
+  padding: 0.75rem 1.5rem;
   border-radius: 0;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 600;
   background: transparent;
   color: var(--color-text-main);
-  border: 1px solid var(--color-text-main);
+  border: 2px solid var(--color-text-main);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+}
+
+@media (min-width: 768px) {
+  .badge-base {
+    padding: 0.875rem 2rem;
+    font-size: 0.875rem;
+  }
 }
 
 .badge-primary {
@@ -60,22 +78,29 @@
   border-color: var(--color-text-main);
 }
 
-/* Button System - Stile Lined (minimale) */
+/* Button System - Stile Lined (minimale, ridimensionato) */
 .btn-base {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-sm);
-  padding: 1rem 2.5rem;
+  gap: var(--spacing-md);
+  padding: 1.25rem 3.5rem;
   border-radius: 0;
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   transition: all var(--transition-base);
   border: 2px solid;
   cursor: pointer;
   font-family: var(--font-family-base);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
+}
+
+@media (min-width: 768px) {
+  .btn-base {
+    padding: 1.5rem 4.5rem;
+    font-size: 1rem;
+  }
 }
 
 .btn-primary {
@@ -107,20 +132,20 @@
 /* Animation System - GSAP Scroll */
 /* Gli elementi sono visibili di default, GSAP gestisce le animazioni */
 
-/* Section Spacing - Coerente */
+/* Section Spacing - Stile Lined (ridimensionato) */
 .section-base {
-  padding: var(--spacing-3xl) 0;
+  padding: 6rem 0;
 }
 
 @media (min-width: 768px) {
   .section-base {
-    padding: calc(var(--spacing-3xl) * 1.5) 0;
+    padding: 8rem 0;
   }
 }
 
 @media (min-width: 1024px) {
   .section-base {
-    padding: calc(var(--spacing-3xl) * 2) 0;
+    padding: 10rem 0;
   }
 }
 
