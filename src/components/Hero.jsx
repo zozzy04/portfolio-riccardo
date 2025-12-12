@@ -34,14 +34,27 @@ const Hero = () => {
       <div className="container">
         <div className="hero-content">
           <div className="hero-text">
-            <h1 className="hero-title" ref={titleRef}>
-              {personalInfo.name.split(' ').map((name, i, arr) => (
-                <React.Fragment key={i}>
-                  {name}
-                  {i < arr.length - 1 && <br />}
-                </React.Fragment>
-              ))}
-            </h1>
+            <div className="hero-title-wrapper">
+              <div className="hero-image-container">
+                <img 
+                  src="/hero-image.jpg" 
+                  alt="Riccardo Zozzolotto" 
+                  className="hero-portrait"
+                  loading="eager"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                  }}
+                />
+              </div>
+              <h1 className="hero-title" ref={titleRef}>
+                {personalInfo.name.split(' ').map((name, i, arr) => (
+                  <React.Fragment key={i}>
+                    {name}
+                    {i < arr.length - 1 && <br />}
+                  </React.Fragment>
+                ))}
+              </h1>
+            </div>
             
             <h2 className="hero-subtitle" ref={subtitleRef}>
               {personalInfo.title}
@@ -60,18 +73,6 @@ const Hero = () => {
                 <span>Progetti</span>
               </a>
             </div>
-          </div>
-          
-          <div className="hero-image-container">
-            <img 
-              src="/hero-image.jpg" 
-              alt="Riccardo Zozzolotto" 
-              className="hero-portrait"
-              loading="eager"
-              onError={(e) => {
-                e.target.style.display = 'none';
-              }}
-            />
           </div>
         </div>
       </div>
