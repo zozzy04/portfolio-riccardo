@@ -302,11 +302,21 @@ section {
   content: '';
   position: absolute;
   bottom: -1rem;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 120px;
-  height: 8px;
-  background: var(--color-brand-primary);
-  border-radius: 0;
+  height: 6px;
+  background: var(--color-blue-steel);
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.section-header:hover .section-title::after {
+  width: 160px;
+}
+
+[data-theme="dark"] .section-title::after {
+  background: var(--color-blue-night);
 }
 
 .section-subtitle {

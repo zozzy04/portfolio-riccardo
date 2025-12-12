@@ -27,9 +27,14 @@
 }
 
 .card-base:hover {
-  border-color: var(--color-text-main);
-  transform: translateY(-6px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  border-color: var(--color-blue-steel);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(74, 111, 165, 0.2);
+}
+
+[data-theme="dark"] .card-base:hover {
+  border-color: var(--color-blue-night);
+  box-shadow: 0 16px 40px rgba(30, 58, 95, 0.3);
 }
 
 [data-theme="dark"] .card-base:hover {
