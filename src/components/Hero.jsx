@@ -44,10 +44,10 @@ const Hero = () => {
                   e.target.style.display = 'none';
                 }}
               />
+              <h1 className="hero-title" ref={titleRef}>
+                {personalInfo.name}
+              </h1>
             </div>
-            <h1 className="hero-title" ref={titleRef}>
-              {personalInfo.name}
-            </h1>
           </div>
           
           <div className="hero-text">
