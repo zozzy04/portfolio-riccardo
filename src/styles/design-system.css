@@ -20,8 +20,12 @@
 
 .card-base:hover {
   border-color: var(--color-text-main);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="dark"] .card-base:hover {
+  box-shadow: 0 12px 32px rgba(255, 255, 255, 0.08);
 }
 
 /* Icon System - Stile Lined (minimale, ridimensionato) */
@@ -41,7 +45,12 @@
 .icon-container:hover {
   background: var(--color-text-main);
   color: var(--color-bg-body);
-  transform: scale(1.05);
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .icon-container:hover {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
 }
 
 .icon-small {
@@ -78,6 +87,15 @@
   border-color: var(--color-text-main);
 }
 
+.badge-base:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .badge-base:hover {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
 /* Button System - Stile Lined (minimale, ridimensionato) */
 .btn-base {
   display: inline-flex;
@@ -112,21 +130,43 @@
 .btn-primary:hover {
   background: transparent;
   color: var(--color-text-main);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .btn-secondary {
   background: transparent;
   color: var(--color-text-main);
   border-color: var(--color-text-main);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--color-text-main);
+  transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.btn-secondary:hover::before {
+  left: 0;
 }
 
 .btn-secondary:hover {
-  background: var(--color-text-main);
   color: var(--color-bg-body);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .btn-primary:hover,
+[data-theme="dark"] .btn-secondary:hover {
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
 }
 
 /* Animation System - GSAP Scroll */

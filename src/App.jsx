@@ -14,6 +14,7 @@ import './styles/design-system.css';
 import './styles/components.css';
 import './styles/visibility-fix.css';
 import './styles/animations.css';
+import './styles/animations-enhanced.css';
 import './styles/cleanup-lined.css';
 
 // Ottimizzazione dei componenti con React.memo per evitare re-rendering non necessari
