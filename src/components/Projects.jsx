@@ -55,6 +55,19 @@ const Projects = () => {
         <div className="projects-grid" ref={cardsRef}>
           {filteredProjects.map((project, index) => (
             <div key={index} className="project-card card-base">
+              {project.image && (
+                <div className="project-image-wrapper">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="project-image"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                </div>
+              )}
+              
               <div className="project-header">
                 <h3 className="project-title">{project.title}</h3>
                 <span className={`category-badge badge-base ${project.category === 'web' ? 'badge-primary' : ''}`}>
