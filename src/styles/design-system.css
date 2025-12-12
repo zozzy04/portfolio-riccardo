@@ -220,6 +220,8 @@
 .btn-secondary:hover {
   color: #FFFFFF;
   border-color: var(--color-blue-steel-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(74, 111, 165, 0.3);
 }
 
 [data-theme="dark"] .btn-secondary {
@@ -234,14 +236,12 @@
 [data-theme="dark"] .btn-secondary:hover {
   color: #FFFFFF;
   border-color: var(--color-blue-night-hover);
-}
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 20px rgba(30, 58, 95, 0.4);
 }
 
-[data-theme="dark"] .btn-primary:hover,
-[data-theme="dark"] .btn-secondary:hover {
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+[data-theme="dark"] .btn-primary:hover {
+  box-shadow: 0 8px 20px rgba(30, 58, 95, 0.4);
 }
 
 /* Animation System - GSAP Scroll */
