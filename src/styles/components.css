@@ -3,12 +3,12 @@
 /* About Section */
 .about-content {
   display: grid;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 @media (min-width: 768px) {
   .about-content {
-    gap: 5rem;
+    gap: 2.5rem;
   }
 }
 
@@ -61,12 +61,12 @@
 .about-details {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 @media (min-width: 768px) {
   .about-details {
-    gap: 4rem;
+    gap: 2.5rem;
   }
 }
 

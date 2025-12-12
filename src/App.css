@@ -50,9 +50,9 @@
   --container-padding-desktop: 2rem;
   --container-padding: var(--container-padding-mobile);
   
-  --section-padding-mobile: 3rem 0;
-  --section-padding-tablet: 5rem 0;
-  --section-padding-desktop: 8rem 0;
+  --section-padding-mobile: 2rem 0;
+  --section-padding-tablet: 3rem 0;
+  --section-padding-desktop: 4rem 0;
   --section-padding: var(--section-padding-mobile);
   
   /* Container widths */
@@ -271,18 +271,18 @@ section {
 /* Section Headers - Design moderno */
 .section-header {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 2.5rem;
 }
 
 @media (min-width: 768px) {
   .section-header {
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
   }
 }
 
 @media (min-width: 1024px) {
   .section-header {
-    margin-bottom: 8rem;
+    margin-bottom: 4rem;
   }
 }
 

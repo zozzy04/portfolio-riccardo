@@ -22,6 +22,12 @@
   --color-brand-accent-hover: #1A1A1A;
   --color-brand-accent-light: #333333;
 
+  /* Colori blu per bottoni - Light mode */
+  --color-blue-steel: #4A6FA5; /* Blu acciaio */
+  --color-blue-steel-hover: #5A7FB5;
+  --color-blue-night: #1E3A5F; /* Blu notte */
+  --color-blue-night-hover: #2E4A6F;
+
   --color-brand-night-blue: #000000;
   --color-brand-night-blue-soft: #1A1A1A;
   --color-brand-night-blue-softest: #333333;
@@ -126,6 +132,12 @@
   --color-brand-accent: #FFFFFF;
   --color-brand-accent-hover: #E5E5E5;
   --color-brand-accent-light: #CCCCCC;
+
+  /* Colori blu per bottoni - Dark mode */
+  --color-blue-steel: #1E3A5F; /* Blu notte */
+  --color-blue-steel-hover: #2E4A6F;
+  --color-blue-night: #0F1F3F; /* Blu notte scuro */
+  --color-blue-night-hover: #1F2F4F;
 
   --color-brand-night-blue: #FFFFFF;
   --color-brand-night-blue-soft: #E5E5E5;
