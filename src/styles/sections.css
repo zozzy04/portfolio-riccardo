@@ -362,12 +362,30 @@ body {
 }
 
 @media (min-width: 768px) {
+  .hero-image-container {
+    padding: 2.5rem;
+    border-radius: 24px;
+  }
+  
+  .hero-image-container::before {
+    border-radius: 24px;
+  }
+  
   .hero-portrait {
     max-width: 100%;
   }
 }
 
 @media (min-width: 1024px) {
+  .hero-image-container {
+    padding: 3rem;
+    border-radius: 28px;
+  }
+  
+  .hero-image-container::before {
+    border-radius: 28px;
+  }
+  
   .hero-portrait {
     max-width: 100%;
   }
