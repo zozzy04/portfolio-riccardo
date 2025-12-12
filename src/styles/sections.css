@@ -310,6 +310,21 @@ body {
   align-items: center;
   justify-content: center;
   overflow: visible;
+  background: var(--color-bg-body);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.hero-image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-bg-body);
+  border-radius: 20px;
+  z-index: 0;
 }
 
 @media (min-width: 768px) {
@@ -333,9 +348,17 @@ body {
   filter: none;
   opacity: 1;
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  mix-blend-mode: normal;
+  mix-blend-mode: multiply;
   animation: floatImage 6s ease-in-out infinite;
   will-change: transform;
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
+
+[data-theme="dark"] .hero-portrait {
+  mix-blend-mode: screen;
+  filter: invert(1);
 }
 
 @media (min-width: 768px) {
@@ -364,10 +387,6 @@ body {
   }
 }
 
-[data-theme="dark"] .hero-portrait {
-  filter: none;
-  opacity: 1;
-}
 
 /* Media queries per hero-content già definite sopra */
 
@@ -420,9 +439,9 @@ body {
   .hero-title {
     font-size: clamp(1.25rem, 4vw, 2rem);
     padding: 0.75rem 1.5rem;
-    top: 50%;
+    bottom: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
   }
   
   .hero-subtitle {
@@ -452,9 +471,9 @@ body {
 
 .hero-title {
   position: absolute;
-  top: 50%;
+  bottom: 0;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 700;
   line-height: 1.2;
