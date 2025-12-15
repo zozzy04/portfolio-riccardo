@@ -127,7 +127,7 @@ export const experienceData = {
     {
       icon: 'Briefcase',
       title: 'Manovale',
-      company: 'OPITERGIUM VINI Società Agricola Cooperativa',
+      company: 'OPITERGIUM VINI',
       companyLink: 'https://www.cantinaoderzo.it/',
       location: 'Oderzo, Veneto, Italia',
       period: 'Agosto 2024 - Ottobre 2024',
@@ -137,7 +137,7 @@ export const experienceData = {
     {
       icon: 'Briefcase',
       title: 'Manovale',
-      company: 'OPITERGIUM VINI Società Agricola Cooperativa',
+      company: 'OPITERGIUM VINI',
       companyLink: 'https://www.cantinaoderzo.it/',
       location: 'Oderzo, Veneto, Italia',
       period: 'Settembre 2024 - Ottobre 2024',
@@ -157,7 +157,7 @@ export const experienceData = {
     {
       icon: 'Briefcase',
       title: 'Manovale',
-      company: 'OPITERGIUM VINI Società Agricola Cooperativa',
+      company: 'OPITERGIUM VINI',
       companyLink: 'https://www.cantinaoderzo.it/',
       location: 'Oderzo, Veneto, Italia',
       period: 'Agosto 2023 - Settembre 2023',
