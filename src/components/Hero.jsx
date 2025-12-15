@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 import TypewriterText from './TypewriterText';
+import CircleExpandButton from './CircleExpandButton';
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -66,13 +67,22 @@ const Hero = () => {
             </p>
             
             <div className="hero-actions" ref={buttonRef}>
-              <a href="#contact" className="btn-base btn-primary btn-glassy">
+              <CircleExpandButton
+                href="#contact"
+                color="var(--accent-primary)"
+                textColor="#ffffff"
+              >
                 <span>Contattami</span>
                 <ArrowRight size={18} />
-              </a>
-              <a href="#projects" className="btn-base btn-secondary">
+              </CircleExpandButton>
+              <CircleExpandButton
+                href="#projects"
+                color="var(--bg-elevated)"
+                textColor="var(--text-primary)"
+                style={{ border: '1px solid var(--border-medium)' }}
+              >
                 <span>Progetti</span>
-              </a>
+              </CircleExpandButton>
             </div>
           </div>
         </div>

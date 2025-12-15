@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from 'react';
-import { Briefcase, MapPin, Brain } from 'lucide-react';
+import { Briefcase, MapPin, Brain, Warehouse } from 'lucide-react';
 import { experienceData } from '../data/portfolioData';
 
 const iconMap = {
-  Brain
+  Brain,
+  Briefcase,
+  Warehouse
 };
 
 const Experience = () => {

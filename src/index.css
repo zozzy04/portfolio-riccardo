@@ -740,6 +740,25 @@ a:hover {
   -webkit-font-smoothing: antialiased;
 }
 
+/* WhatsApp Chat Button */
+.whatsapp-chat-button {
+  display: inline-flex;
+}
+
+.whatsapp-inline {
+  position: static !important;
+  bottom: auto !important;
+  right: auto !important;
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .whatsapp-chat-button[style*="position: fixed"] {
+    bottom: 24px;
+    right: 24px;
+  }
+}
+
 /* Manteniamo compatibilità con il vecchio stile */
 .social-link {
   width: 40px;

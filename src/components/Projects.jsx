@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ExternalLink, Github, Code, Database, Globe, ArrowRight } from 'lucide-react';
 import { projectsData } from '../data/portfolioData';
+import CircleExpandButton from './CircleExpandButton';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -81,26 +82,26 @@ const Projects = () => {
                 </span>
                 <div className="project-actions">
                   {project.liveUrl && (
-                    <a
+                    <CircleExpandButton
                       href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-base btn-secondary"
+                      color="var(--bg-elevated)"
+                      textColor="var(--text-primary)"
+                      style={{ border: '1px solid var(--border-medium)' }}
                     >
                       <ExternalLink size={16} />
                       <span>Live</span>
-                    </a>
+                    </CircleExpandButton>
                   )}
                   {project.codeUrl && (
-                    <a
+                    <CircleExpandButton
                       href={project.codeUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-base btn-secondary"
+                      color="var(--bg-elevated)"
+                      textColor="var(--text-primary)"
+                      style={{ border: '1px solid var(--border-medium)' }}
                     >
                       <Github size={16} />
                       <span>Code</span>
-                    </a>
+                    </CircleExpandButton>
                   )}
                 </div>
               </div>
@@ -110,10 +111,14 @@ const Projects = () => {
 
         <div className="projects-cta">
           <p className="text-muted">Interessato a collaborare su un progetto?</p>
-          <a href="#contact" className="btn-base btn-primary">
+          <CircleExpandButton
+            href="#contact"
+            color="var(--accent-primary)"
+            textColor="#ffffff"
+          >
             <span>Contattami</span>
             <ArrowRight size={18} />
-          </a>
+          </CircleExpandButton>
         </div>
       </div>
     </section>

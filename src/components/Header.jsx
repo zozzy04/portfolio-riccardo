@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
 import { navItems } from '../data/portfolioData';
+import EyesFollowCursor from './EyesFollowCursor';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,7 +32,14 @@ const Header = () => {
         <div className="header-content">
           <div className="logo">
             <a href="#home" className="logo-link">
-              <span className="logo-text logo-liquid">RZ</span>
+              <EyesFollowCursor 
+                radius={8}
+                eyeSize={24}
+                pupilSize={8}
+                eyeColor="var(--accent-primary)"
+                pupilColor="#ffffff"
+                gap={4}
+              />
             </a>
           </div>
 

@@ -31,7 +31,7 @@ export const aboutData = {
     {
       icon: 'Rocket',
       title: 'Il Mio Lavoro',
-      description: 'Lavoro come AI Developer & Data Analyst nell\'Innovation Hub di Espiù S.R.L., dove sviluppo soluzioni intelligenti e analisi dati per ottimizzare i processi aziendali.'
+      description: 'Lavoro come AI Developer & Data Analyst presso Enernext, dove sviluppo soluzioni intelligenti e analisi dati per ottimizzare i processi aziendali.'
     },
     {
       icon: 'Code',
@@ -110,19 +110,69 @@ export const experienceData = {
       company: 'Enernext',
       companyLink: 'https://enernext.it',
       location: 'Italia',
-      period: '2025 - Presente',
+      period: 'Ottobre 2025 - Presente',
       description: 'Tirocinio come AI Developer Trainee presso Enernext, dove sviluppo app e software con AI applicata per soluzioni innovative nel settore energetico.',
       technologies: ['AI/ML', 'Python', 'React', 'JavaScript', 'Machine Learning']
     },
     {
       icon: 'Brain',
-      title: 'AI Developer & Data Analyst',
-      company: 'Espiù S.R.L.',
+      title: 'Stagista',
+      company: 'EsPiù S.r.l. Società Benefit',
       companyLink: 'https://espiu.it',
       location: 'Treviso, Italia',
-      period: 'Maggio 2025 - Settembre 2025',
-      description: 'Lavoro nell\'Innovation Hub di Espiù, dove mi occupo di sviluppo di soluzioni AI e analisi dati per ottimizzare i processi aziendali.',
+      period: 'Maggio 2025 - Giugno 2025',
+      description: 'Stage presso EsPiù nell\'Innovation Hub, dove mi sono occupato di sviluppo di soluzioni AI e analisi dati per ottimizzare i processi aziendali.',
       technologies: ['Python', 'Power BI', 'Qlik', 'Knime', 'SQL', 'React']
+    },
+    {
+      icon: 'Briefcase',
+      title: 'Manovale',
+      company: 'OPITERGIUM VINI Società Agricola Cooperativa',
+      companyLink: 'https://www.cantinaoderzo.it/',
+      location: 'Oderzo, Veneto, Italia',
+      period: 'Agosto 2024 - Ottobre 2024',
+      description: 'Lavoro stagionale a tempo pieno come manovale in cantina, occupandomi della produzione e lavorazione del vino.',
+      technologies: []
+    },
+    {
+      icon: 'Briefcase',
+      title: 'Manovale',
+      company: 'OPITERGIUM VINI Società Agricola Cooperativa',
+      companyLink: 'https://www.cantinaoderzo.it/',
+      location: 'Oderzo, Veneto, Italia',
+      period: 'Settembre 2024 - Ottobre 2024',
+      description: 'Stagione in cantina come manovale, supportando le attività di produzione vinicola durante il periodo della vendemmia.',
+      technologies: []
+    },
+    {
+      icon: 'Briefcase',
+      title: 'Magazziniere',
+      company: 'Eraldo Store',
+      companyLink: 'https://eraldo.store',
+      location: 'Ceggia, Veneto, Italia',
+      period: 'Marzo 2024 - Giugno 2024',
+      description: 'Lavoro a tempo pieno come magazziniere, gestendo la movimentazione merci, l\'organizzazione del magazzino e le operazioni logistiche.',
+      technologies: []
+    },
+    {
+      icon: 'Briefcase',
+      title: 'Manovale',
+      company: 'OPITERGIUM VINI Società Agricola Cooperativa',
+      companyLink: 'https://www.cantinaoderzo.it/',
+      location: 'Oderzo, Veneto, Italia',
+      period: 'Agosto 2023 - Settembre 2023',
+      description: 'Lavoro stagionale come manovale in cantina durante il periodo della vendemmia, supportando le operazioni di produzione vinicola.',
+      technologies: []
+    },
+    {
+      icon: 'Briefcase',
+      title: 'Stagista',
+      company: 'Gruppo Geromin',
+      companyLink: 'https://www.gruppogeromin.com/it',
+      location: 'San Stino di Livenza, Veneto, Italia',
+      period: 'Luglio 2021 - Agosto 2021',
+      description: 'Stage part-time presso Gruppo Geromin, acquisendo esperienza nel settore aziendale e supportando le attività operative.',
+      technologies: []
     }
   ]
 };
