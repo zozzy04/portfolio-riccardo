@@ -327,7 +327,7 @@ a:hover {
 .hero-background-image {
   position: absolute;
   inset: 0;
-  z-index: 0.5;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -375,7 +375,7 @@ a:hover {
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -385,13 +385,14 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
-  align-items: flex-start;
+  align-items: center;
   padding-bottom: var(--space-2xl);
   margin-bottom: var(--space-3xl);
 }
 
 @media (min-width: 768px) {
   .hero-text-bottom {
+    align-items: flex-start;
     padding-bottom: var(--space-3xl);
     margin-bottom: var(--space-4xl);
     margin-top: var(--space-2xl);
