@@ -1,78 +1,94 @@
 /* Design System - Coerenza visiva completa */
 
-/* Card System - Stile Lined (proporzioni ottimizzate) */
+/* Card System - stile “Apple / glass” */
 .card-base {
-  background: var(--color-bg-elevated);
-  border: 2px solid var(--color-border-subtle);
-  border-radius: 12px;
-  padding: 1.25rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: none;
+  position: relative;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(148, 163, 253, 0.16), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.18), transparent 55%),
+    rgba(15, 23, 42, 0.88);
+  border-radius: 18px;
+  padding: 1.75rem;
+  border: 1px solid rgba(148, 163, 253, 0.28);
+  box-shadow:
+    0 24px 80px rgba(15, 23, 42, 0.85),
+    0 0 0 1px rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(26px);
+  -webkit-backdrop-filter: blur(26px);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease-out;
   overflow: visible !important;
   min-height: auto !important;
 }
 
 @media (min-width: 768px) {
   .card-base {
-    padding: 1.5rem;
-    border-radius: 14px;
+    padding: 2rem;
+    border-radius: 20px;
   }
 }
 
 @media (min-width: 1024px) {
   .card-base {
-    padding: 1.75rem;
-    border-radius: 16px;
+    padding: 2.25rem;
+    border-radius: 22px;
   }
 }
 
+.card-base::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 1px solid rgba(248, 250, 252, 0.05);
+  pointer-events: none;
+}
+
 .card-base:hover {
-  border-color: var(--color-blue-steel);
-  transform: translateY(-8px);
-  box-shadow: 0 16px 40px rgba(74, 111, 165, 0.2);
+  transform: translateY(-10px) scale(1.01);
+  border-color: rgba(191, 219, 254, 0.85);
+  box-shadow:
+    0 32px 110px rgba(15, 23, 42, 0.95),
+    0 0 0 1px rgba(129, 140, 248, 0.5);
 }
 
-[data-theme="dark"] .card-base:hover {
-  border-color: var(--color-blue-night);
-  box-shadow: 0 16px 40px rgba(30, 58, 95, 0.3);
+[data-theme="dark"] .card-base {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(129, 140, 248, 0.22), transparent 55%),
+    radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.22), transparent 55%),
+    rgba(2, 6, 23, 0.98);
 }
 
-[data-theme="dark"] .card-base:hover {
-  box-shadow: 0 12px 32px rgba(255, 255, 255, 0.08);
-}
-
-/* Icon System - Stile Lined (proporzioni ottimizzate) */
+/* Icon System - più morbido e premium */
 .icon-container {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 10px;
-  background: transparent;
-  border: 2px solid var(--color-text-main);
-  color: var(--color-text-main);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 0%, rgba(248, 250, 252, 0.55), transparent 60%);
+  border: 1px solid rgba(148, 163, 253, 0.5);
+  color: var(--color-brand-primary);
   transition: all var(--transition-base);
   flex-shrink: 0;
 }
 
 @media (min-width: 768px) {
   .icon-container {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 12px;
+    width: 2.75rem;
+    height: 2.75rem;
   }
 }
 
 .icon-container:hover {
-  background: var(--color-text-main);
-  color: var(--color-bg-body);
-  transform: scale(1.08) rotate(3deg);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.6);
 }
 
-[data-theme="dark"] .icon-container:hover {
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+[data-theme="dark"] .icon-container {
+  background: radial-gradient(circle at 30% 0%, rgba(248, 250, 252, 0.3), transparent 60%);
 }
 
 .icon-small {
@@ -89,67 +105,63 @@
   }
 }
 
-/* Badge System - Stile Lined (proporzioni ottimizzate) */
+/* Badge System - pill morbide in stile badge Apple */
 .badge-base {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-size: 0.6875rem;
+  border-radius:999px;
+  font-size: 0.7rem;
   font-weight: 600;
-  background: transparent;
-  color: var(--color-text-main);
-  border: 2px solid var(--color-text-main);
+  background: rgba(15, 23, 42, 0.85);
+  color: var(--color-text-secondary);
+  border: 1px solid rgba(148, 163, 253, 0.35);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.09em;
   white-space: nowrap;
 }
 
 @media (min-width: 768px) {
   .badge-base {
-    padding: 0.625rem 1.25rem;
+    padding: 0.625rem 1.4rem;
     font-size: 0.75rem;
     gap: 0.625rem;
-    border-radius: 10px;
+    border-radius: 999px;
   }
 }
 
 @media (min-width: 1024px) {
   .badge-base {
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 1.75rem;
     font-size: 0.8125rem;
-    border-radius: 12px;
+    border-radius: 999px;
   }
 }
 
 .badge-primary {
-  background: var(--color-text-main);
-  color: var(--color-bg-body);
-  border-color: var(--color-text-main);
+  background: linear-gradient(135deg, #6366F1 0%, #22D3EE 50%, #A855F7 100%);
+  color: var(--color-text-on-primary);
+  border-color: transparent;
 }
 
 .badge-base:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.6);
 }
 
-[data-theme="dark"] .badge-base:hover {
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-}
-
-/* Button System - Stile Lined (proporzioni ottimizzate) */
+/* Button System - più grandi e morbidi, stile CTA Apple */
 .btn-base {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   padding: 0.75rem 1.75rem;
-  border-radius: 10px;
+  border-radius: 999px;
   font-weight: 600;
-  font-size: 0.8125rem;
+  font-size: 0.85rem;
   transition: all var(--transition-base);
-  border: 2px solid;
+  border: 1px solid transparent;
   cursor: pointer;
   font-family: var(--font-family-base);
   text-transform: uppercase;
@@ -158,33 +170,31 @@
 
 @media (min-width: 768px) {
   .btn-base {
-    padding: 0.875rem 2rem;
+    padding: 0.9rem 2.2rem;
     font-size: 0.875rem;
     gap: 0.75rem;
-    border-radius: 12px;
+    border-radius: 999px;
   }
 }
 
 @media (min-width: 1024px) {
   .btn-base {
-    padding: 1rem 2.5rem;
-    font-size: 0.9375rem;
-    border-radius: 14px;
+    padding: 1rem 2.7rem;
+    font-size: 0.95rem;
+    border-radius: 999px;
   }
 }
 
 .btn-primary {
-  background: var(--color-blue-steel);
-  color: #FFFFFF;
-  border-color: var(--color-blue-steel);
+  background: linear-gradient(135deg, #6366F1 0%, #22D3EE 45%, #A855F7 100%);
+  color: #0B1120;
+  border-color: transparent;
+  box-shadow: 0 22px 60px rgba(37, 99, 235, 0.65);
 }
 
 .btn-primary:hover {
-  background: var(--color-blue-steel-hover);
-  border-color: var(--color-blue-steel-hover);
-  color: #FFFFFF;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(74, 111, 165, 0.3);
+  transform: translateY(-3px) scale(1.015);
+  box-shadow: 0 30px 90px rgba(30, 64, 175, 0.9);
 }
 
 /* Glassy Button - stile Framer \"Glassy button\" */
@@ -244,9 +254,9 @@
 }
 
 .btn-secondary {
-  background: transparent;
-  color: var(--color-blue-steel);
-  border-color: var(--color-blue-steel);
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--color-text-main);
+  border-color: rgba(148, 163, 253, 0.5);
   position: relative;
   overflow: hidden;
 }
@@ -255,10 +265,10 @@
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
+  left: -80%;
   width: 100%;
   height: 100%;
-  background: var(--color-blue-steel);
+  background: linear-gradient(135deg, rgba(148, 163, 253, 0.6), rgba(56, 189, 248, 0.4));
   transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: -1;
 }
@@ -268,26 +278,22 @@
 }
 
 .btn-secondary:hover {
-  color: #FFFFFF;
-  border-color: var(--color-blue-steel-hover);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(74, 111, 165, 0.3);
+  color: var(--color-bg-body);
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.85);
 }
 
 [data-theme="dark"] .btn-secondary {
-  color: var(--color-blue-night);
-  border-color: var(--color-blue-night);
+  color: var(--color-text-main);
+  border-color: rgba(148, 163, 253, 0.55);
 }
 
 [data-theme="dark"] .btn-secondary::before {
-  background: var(--color-blue-night);
+  background: linear-gradient(135deg, rgba(129, 140, 248, 0.7), rgba(56, 189, 248, 0.5));
 }
 
 [data-theme="dark"] .btn-secondary:hover {
-  color: #FFFFFF;
-  border-color: var(--color-blue-night-hover);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(30, 58, 95, 0.4);
+  color: var(--color-bg-body);
 }
 
 [data-theme="dark"] .btn-primary:hover {

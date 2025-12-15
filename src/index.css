@@ -229,50 +229,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Stelline animate nel background */
+/* Background globale più pulito e “Apple-like” */
 body::before {
   content: '';
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(3px 3px at 10% 20%, #4682B4 50%, transparent 50%),
-    radial-gradient(2px 2px at 30% 40%, #4682B4 50%, transparent 50%),
-    radial-gradient(3px 3px at 50% 10%, #4682B4 50%, transparent 50%),
-    radial-gradient(2px 2px at 70% 30%, #4682B4 50%, transparent 50%),
-    radial-gradient(3px 3px at 90% 50%, #4682B4 50%, transparent 50%),
-    radial-gradient(2px 2px at 15% 60%, #4682B4 50%, transparent 50%),
-    radial-gradient(3px 3px at 35% 70%, #4682B4 50%, transparent 50%),
-    radial-gradient(2px 2px at 55% 80%, #4682B4 50%, transparent 50%),
-    radial-gradient(3px 3px at 75% 90%, #4682B4 50%, transparent 50%),
-    radial-gradient(2px 2px at 25% 15%, #4682B4 50%, transparent 50%),
-    radial-gradient(3px 3px at 45% 25%, #4682B4 50%, transparent 50%),
-    radial-gradient(2px 2px at 65% 35%, #4682B4 50%, transparent 50%),
-    radial-gradient(3px 3px at 85% 45%, #4682B4 50%, transparent 50%),
-    radial-gradient(2px 2px at 5% 55%, #4682B4 50%, transparent 50%),
-    radial-gradient(3px 3px at 95% 65%, #4682B4 50%, transparent 50%),
-    radial-gradient(2px 2px at 20% 75%, #4682B4 50%, transparent 50%),
-    radial-gradient(3px 3px at 40% 85%, #4682B4 50%, transparent 50%),
-    radial-gradient(2px 2px at 60% 5%, #4682B4 50%, transparent 50%),
-    radial-gradient(3px 3px at 80% 15%, #4682B4 50%, transparent 50%),
-    radial-gradient(2px 2px at 12% 95%, #4682B4 50%, transparent 50%),
-    radial-gradient(2px 2px at 8% 35%, #4682B4 50%, transparent 50%),
-    radial-gradient(3px 3px at 42% 55%, #4682B4 50%, transparent 50%),
-    radial-gradient(2px 2px at 67% 18%, #4682B4 50%, transparent 50%),
-    radial-gradient(3px 3px at 88% 72%, #4682B4 50%, transparent 50%),
-    radial-gradient(2px 2px at 18% 88%, #4682B4 50%, transparent 50%),
-    radial-gradient(3px 3px at 52% 38%, #4682B4 50%, transparent 50%),
-    radial-gradient(2px 2px at 73% 62%, #4682B4 50%, transparent 50%),
-    radial-gradient(3px 3px at 33% 28%, #4682B4 50%, transparent 50%),
-    radial-gradient(2px 2px at 58% 82%, #4682B4 50%, transparent 50%);
-  background-repeat: repeat;
-  background-size: 400px 400px;
-  opacity: 0.7;
-  animation: starMoveRandom 60s ease-in-out infinite;
-  z-index: 0;
+  inset: 0;
   pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(circle at top left, rgba(99, 102, 241, 0.45), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.32), transparent 55%),
+    radial-gradient(circle at top right, rgba(168, 85, 247, 0.28), transparent 55%);
+  opacity: 0.9;
+  filter: blur(40px);
+  transform: translate3d(0, 0, 0);
 }
 
 [data-theme="dark"] body::before {
