@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
+import TypewriterText from './TypewriterText';
 
 const Hero = () => {
   const heroRef = useRef(null);
@@ -37,8 +38,27 @@ const Hero = () => {
             <h1 className="hero-title" ref={titleRef}>
               {personalInfo.name}
             </h1>
-            <h2 className="hero-subtitle hero-typewriter" ref={subtitleRef}>
-              {personalInfo.title}
+            <h2 className="hero-subtitle" ref={subtitleRef}>
+              <TypewriterText
+                texts={[
+                  personalInfo.title,
+                  'Machine Learning Specialist',
+                  'Data Visualization Expert',
+                  'Full Stack Developer'
+                ]}
+                typingSpeed={80}
+                deletingSpeed={40}
+                pauseDuration={2500}
+                initialDelay={500}
+                loop={true}
+                variableSpeed={true}
+                startOnViewport={true}
+                cursorChar="|"
+                cursorColor="var(--accent-primary)"
+                showCursor={true}
+                hideCursorWhileTyping={false}
+                cursorBlinkSpeed={530}
+              />
             </h2>
             
             <p className="hero-description" ref={descriptionRef}>

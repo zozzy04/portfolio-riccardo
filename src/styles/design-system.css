@@ -247,3 +247,22 @@
 .theme-toggle-advanced:hover {
   border-color: var(--accent-primary);
 }
+
+/* === TYPEWRITER TEXT === */
+.typewriter-text {
+  display: inline-block;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  animation: typewriterBlink 530ms infinite;
+}
+
+@keyframes typewriterBlink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
