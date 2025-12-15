@@ -1,7 +1,7 @@
 /* Import Google Fonts - Font più moderno e leggibile */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-/* CSS Variables - Light Theme (Default) */
+/* CSS Variables - Tema base (impostato già su Athos Dark-style) */
 :root {
   --font-family-base: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-family-heading: "Space Grotesk", system-ui, -apple-system, sans-serif;
@@ -11,51 +11,51 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  /* Brand core - Stile Lined (minimale, neutri) */
-  --color-brand-primary: #000000; /* Nero puro */
-  --color-brand-primary-hover: #1A1A1A;
-  --color-brand-primary-light: #333333;
-  --color-brand-primary-lighter: #666666;
-  --color-brand-primary-softest: #999999;
+  /* Brand core - Athos Dark inspired (indigo / violet) */
+  --color-brand-primary: #6366F1; /* Indigo 500 */
+  --color-brand-primary-hover: #4F46E5; /* Indigo 600 */
+  --color-brand-primary-light: #818CF8; /* Indigo 400 */
+  --color-brand-primary-lighter: #A5B4FC; /* Indigo 300 */
+  --color-brand-primary-softest: #E0E7FF; /* Indigo 100 */
 
-  --color-brand-accent: #000000;
-  --color-brand-accent-hover: #1A1A1A;
-  --color-brand-accent-light: #333333;
+  --color-brand-accent: #A855F7; /* Purple 500 */
+  --color-brand-accent-hover: #9333EA; /* Purple 600 */
+  --color-brand-accent-light: #C4B5FD; /* Violet 300 */
 
-  /* Colori blu per bottoni - Light mode */
-  --color-blue-steel: #4A6FA5; /* Blu acciaio */
-  --color-blue-steel-hover: #5A7FB5;
-  --color-blue-night: #1E3A5F; /* Blu notte */
-  --color-blue-night-hover: #2E4A6F;
+  /* Colori blu per bottoni / dettagli */
+  --color-blue-steel: #38BDF8; /* Sky 400 */
+  --color-blue-steel-hover: #0EA5E9; /* Sky 500 */
+  --color-blue-night: #1D4ED8; /* Blue 600 */
+  --color-blue-night-hover: #1E40AF; /* Blue 700 */
 
-  --color-brand-night-blue: #000000;
-  --color-brand-night-blue-soft: #1A1A1A;
-  --color-brand-night-blue-softest: #333333;
+  --color-brand-night-blue: #0B1120; /* Slate 950-ish */
+  --color-brand-night-blue-soft: #020617; /* Slate 950 */
+  --color-brand-night-blue-softest: #0F172A; /* Slate 900 */
 
-  --color-brand-night: #000000;
-  --color-brand-night-soft: #1A1A1A;
-  --color-brand-night-softest: #333333;
+  --color-brand-night: #020617;
+  --color-brand-night-soft: #020617;
+  --color-brand-night-softest: #020617;
 
-  /* UI tokens - Background neutri (stile Lined) */
-  --color-bg-body: #FFFFFF;
-  --color-bg-surface: #FAFAFA;
-  --color-bg-surface-alt: #F5F5F5;
-  --color-bg-elevated: #FFFFFF;
+  /* UI tokens - Athos Dark style (dark, vellutato) */
+  --color-bg-body: #020617; /* quasi nero bluastro */
+  --color-bg-surface: #020617;
+  --color-bg-surface-alt: #020617;
+  --color-bg-elevated: #020617;
 
-  --color-text-main: #000000;
-  --color-text-secondary: #666666;
-  --color-text-muted: #999999;
-  --color-text-on-primary: #FFFFFF;
-  --color-text-on-dark: #FFFFFF;
+  --color-text-main: #E5E7EB; /* Gray 200 */
+  --color-text-secondary: #9CA3AF; /* Gray 400 */
+  --color-text-muted: #6B7280; /* Gray 500 */
+  --color-text-on-primary: #020617;
+  --color-text-on-dark: #F9FAFB;
 
-  --color-border-subtle: #E5E5E5;
-  --color-border-medium: #CCCCCC;
-  --color-border-strong: #000000;
+  --color-border-subtle: #1E293B; /* Slate 800 */
+  --color-border-medium: #334155; /* Slate 700 */
+  --color-border-strong: #6366F1;
 
-  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.55);
+  --shadow-medium: 0 22px 60px rgba(15, 23, 42, 0.75);
+  --shadow-large: 0 28px 80px rgba(15, 23, 42, 0.85);
+  --shadow-xl: 0 40px 120px rgba(15, 23, 42, 0.95);
   
   /* Animation timing - Coerente */
   --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
@@ -81,29 +81,31 @@
   --bg-primary: var(--color-bg-body);
   --bg-secondary: var(--color-bg-surface);
   --bg-tertiary: var(--color-bg-surface-alt);
-  --bg-card: var(--color-bg-surface);
-  --bg-glass: rgba(253, 252, 236, 0.8);
+  --bg-card: radial-gradient(circle at 0% 0%, rgba(148, 163, 253, 0.18), transparent 55%),
+             radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.22), transparent 55%),
+             #020617;
+  --bg-glass: rgba(15, 23, 42, 0.85);
   
   --text-primary: var(--color-text-main);
-  --text-secondary: var(--color-text-muted);
+  --text-secondary: var(--color-text-secondary);
   --text-muted: var(--color-text-muted);
   
   --primary-color: var(--color-brand-primary);
   --primary-dark: var(--color-brand-night-blue);
   --accent-color: var(--color-brand-accent);
-  --accent-light: var(--color-brand-accent-soft);
+  --accent-light: var(--color-brand-accent-light);
   
   --border-light: var(--color-border-subtle);
-  --border-medium: var(--color-border-strong);
+  --border-medium: var(--color-border-medium);
   --border-color: var(--color-border-subtle);
   
-  --gradient-primary: var(--color-brand-primary);
-  --gradient-secondary: var(--color-brand-accent);
+  --gradient-primary: linear-gradient(135deg, #6366F1 0%, #22D3EE 45%, #A855F7 100%);
+  --gradient-secondary: linear-gradient(135deg, #0EA5E9 0%, #6366F1 50%, #A855F7 100%);
   
-  --shadow-sm: var(--shadow-soft);
-  --shadow-md: var(--shadow-soft);
-  --shadow-lg: var(--shadow-soft);
-  --shadow-xl: var(--shadow-soft);
+  --shadow-sm: 0 8px 25px rgba(15, 23, 42, 0.60);
+  --shadow-md: 0 14px 40px rgba(15, 23, 42, 0.72);
+  --shadow-lg: 0 22px 70px rgba(15, 23, 42, 0.82);
+  --shadow-xl: 0 32px 120px rgba(15, 23, 42, 0.92);
   
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -120,86 +122,88 @@
   --element-color: var(--color-brand-primary-soft);
 }
 
-/* CSS Variables - Dark Theme */
+/* CSS Variables - Dark Theme (stesso mood Athos Dark, ma con leggere differenze di profondità) */
 [data-theme="dark"] {
-  /* Brand core - Dark theme (stile Lined) */
-  --color-brand-primary: #FFFFFF;
-  --color-brand-primary-hover: #E5E5E5;
-  --color-brand-primary-light: #CCCCCC;
-  --color-brand-primary-lighter: #999999;
-  --color-brand-primary-softest: #666666;
+  /* Brand core */
+  --color-brand-primary: #EEF2FF; /* testo chiaro sui gradient */
+  --color-brand-primary-hover: #E0EAFF;
+  --color-brand-primary-light: #CBD5FF;
+  --color-brand-primary-lighter: #A5B4FC;
+  --color-brand-primary-softest: #818CF8;
 
-  --color-brand-accent: #FFFFFF;
-  --color-brand-accent-hover: #E5E5E5;
-  --color-brand-accent-light: #CCCCCC;
+  --color-brand-accent: #A855F7;
+  --color-brand-accent-hover: #9333EA;
+  --color-brand-accent-light: #C4B5FD;
 
-  /* Colori blu per bottoni - Dark mode */
-  --color-blue-steel: #1E3A5F; /* Blu notte */
-  --color-blue-steel-hover: #2E4A6F;
-  --color-blue-night: #0F1F3F; /* Blu notte scuro */
-  --color-blue-night-hover: #1F2F4F;
+  /* Tonalità blu per elementi interattivi */
+  --color-blue-steel: #38BDF8;
+  --color-blue-steel-hover: #0EA5E9;
+  --color-blue-night: #1D4ED8;
+  --color-blue-night-hover: #1E40AF;
 
-  --color-brand-night-blue: #FFFFFF;
-  --color-brand-night-blue-soft: #E5E5E5;
-  --color-brand-night-blue-softest: #CCCCCC;
+  --color-brand-night-blue: #020617;
+  --color-brand-night-blue-soft: #020617;
+  --color-brand-night-blue-softest: #020617;
 
-  --color-brand-night: #000000;
-  --color-brand-night-soft: #1A1A1A;
-  --color-brand-night-softest: #333333;
+  --color-brand-night: #020617;
+  --color-brand-night-soft: #020617;
+  --color-brand-night-softest: #020617;
 
-  /* UI tokens - Dark theme (stile Lined) */
-  --color-bg-body: #000000;
-  --color-bg-surface: #1A1A1A;
-  --color-bg-surface-alt: #333333;
-  --color-bg-elevated: #1A1A1A;
+  /* UI tokens - Dark */
+  --color-bg-body: #020617;
+  --color-bg-surface: #020617;
+  --color-bg-surface-alt: #020617;
+  --color-bg-elevated: #020617;
 
-  --color-text-main: #FFFFFF;
-  --color-text-secondary: #CCCCCC;
-  --color-text-muted: #999999;
-  --color-text-on-primary: #000000;
-  --color-text-on-dark: #FFFFFF;
+  --color-text-main: #E5E7EB;
+  --color-text-secondary: #9CA3AF;
+  --color-text-muted: #6B7280;
+  --color-text-on-primary: #020617;
+  --color-text-on-dark: #F9FAFB;
 
-  --color-border-subtle: #333333;
-  --color-border-medium: #475569;
-  --color-border-strong: #60A5FA;
+  --color-border-subtle: #1E293B;
+  --color-border-medium: #334155;
+  --color-border-strong: #6366F1;
 
-  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
-  --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
+  --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.55);
+  --shadow-medium: 0 22px 60px rgba(15, 23, 42, 0.75);
+  --shadow-large: 0 28px 80px rgba(15, 23, 42, 0.85);
+  --shadow-xl: 0 40px 120px rgba(15, 23, 42, 0.95);
 
-  /* Legacy variables for compatibility */
+  /* Legacy + mapping */
   --bg-primary: var(--color-bg-body);
   --bg-secondary: var(--color-bg-surface);
   --bg-tertiary: var(--color-bg-surface-alt);
-  --bg-card: var(--color-bg-surface);
-  --bg-glass: rgba(42, 43, 47, 0.8);
+  --bg-card: radial-gradient(circle at 0% 0%, rgba(148, 163, 253, 0.20), transparent 55%),
+             radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.26), transparent 55%),
+             #020617;
+  --bg-glass: rgba(15, 23, 42, 0.92);
   
   --text-primary: var(--color-text-main);
-  --text-secondary: var(--color-text-muted);
+  --text-secondary: var(--color-text-secondary);
   --text-muted: var(--color-text-muted);
   
-  --primary-color: var(--color-brand-primary);
-  --primary-dark: var(--color-brand-night-blue);
-  --accent-color: var(--color-brand-accent);
-  --accent-light: var(--color-brand-accent-soft);
+  --primary-color: #6366F1;
+  --primary-dark: #0B1120;
+  --accent-color: #A855F7;
+  --accent-light: #C4B5FD;
   
   --border-light: var(--color-border-subtle);
-  --border-medium: var(--color-border-strong);
+  --border-medium: var(--color-border-medium);
   --border-color: var(--color-border-subtle);
   
-  --gradient-primary: var(--color-brand-primary);
-  --gradient-secondary: var(--color-brand-accent);
+  --gradient-primary: linear-gradient(135deg, #6366F1 0%, #22D3EE 45%, #A855F7 100%);
+  --gradient-secondary: linear-gradient(135deg, #0EA5E9 0%, #6366F1 50%, #A855F7 100%);
   
-  --shadow-sm: var(--shadow-soft);
-  --shadow-md: var(--shadow-soft);
-  --shadow-lg: var(--shadow-soft);
-  --shadow-xl: var(--shadow-soft);
+  --shadow-sm: 0 8px 25px rgba(15, 23, 42, 0.60);
+  --shadow-md: 0 14px 40px rgba(15, 23, 42, 0.72);
+  --shadow-lg: 0 22px 70px rgba(15, 23, 42, 0.82);
+  --shadow-xl: 0 32px 120px rgba(15, 23, 42, 0.92);
   
-  --card-color: var(--color-brand-primary);
-  --feature-color: var(--color-brand-night-blue);
-  --social-color: var(--color-brand-accent);
-  --element-color: var(--color-brand-primary-soft);
+  --card-color: #6366F1;
+  --feature-color: #0EA5E9;
+  --social-color: #A855F7;
+  --element-color: #4F46E5;
 }
 
 /* Reset e base styles */
