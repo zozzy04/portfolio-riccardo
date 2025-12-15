@@ -471,6 +471,120 @@ h4, .heading-sm {
   box-shadow: var(--shadow-soft);
 }
 
+/* === Effetti extra ispirati a Framer === */
+
+/* Animated gradient per l'area hero */
+.hero-animated-gradient {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-animated-gradient::before {
+  content: '';
+  position: absolute;
+  inset: -40%;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(148, 163, 253, 0.45), transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(56, 189, 248, 0.40), transparent 55%),
+    radial-gradient(circle at 0% 100%, rgba(168, 85, 247, 0.35), transparent 55%);
+  filter: blur(40px);
+  opacity: 0.9;
+  animation: heroGradientShift 14s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes heroGradientShift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-4%, 2%, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(4%, -3%, 0) scale(1.08);
+  }
+}
+
+/* Liquid Metal Logo */
+.logo-liquid {
+  display: inline-block;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 0% 0%, #ffffff, #c7d2fe 40%, #6366f1 70%),
+    radial-gradient(circle at 100% 0%, #e0f2fe, #22d3ee 55%, transparent 80%);
+  background-size: 200% 200%;
+  color: #020617;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  border: 1px solid rgba(191, 219, 254, 0.8);
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.7),
+    inset 0 0 0 0.5px rgba(148, 163, 253, 0.8);
+  animation: liquidLogo 10s ease-in-out infinite alternate;
+}
+
+@keyframes liquidLogo {
+  0% {
+    background-position: 0% 0%;
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    background-position: 50% 0%;
+    transform: translate3d(0, -1px, 0);
+  }
+  100% {
+    background-position: 100% 0%;
+    transform: translate3d(0, 1px, 0);
+  }
+}
+
+/* Pro Text Type Effect per il sottotitolo hero */
+.hero-typewriter {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid rgba(148, 163, 253, 0.9);
+  animation:
+    typewriter 4s steps(24, end) 0.3s 1 both,
+    caretBlink 0.9s steps(1, end) infinite;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes caretBlink {
+  0%, 49% { border-color: rgba(148, 163, 253, 0.9); }
+  50%, 100% { border-color: transparent; }
+}
+
+/* Theme changer avanzato (solo stile, logica già gestita dal contesto) */
+.theme-toggle-advanced {
+  position: relative;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 253, 0.6);
+  background: radial-gradient(circle at 0% 0%, rgba(148, 163, 253, 0.35), transparent 60%);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.7);
+}
+
+.theme-toggle-advanced:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.9);
+}
+
+[data-theme=\"dark\"] .theme-toggle-advanced {
+  background: radial-gradient(circle at 100% 0%, rgba(248, 250, 252, 0.15), transparent 60%);
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

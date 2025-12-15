@@ -32,26 +32,12 @@ const Hero = () => {
   return (
     <section id="home" className="hero" ref={heroRef}>
       <div className="container">
-        <div className="hero-content">
-          <div className="hero-image-wrapper">
-            <div className="hero-image-container">
-              <img 
-                src="/hero-image.png" 
-                alt="Riccardo Zozzolotto" 
-                className="hero-portrait"
-                loading="eager"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                }}
-              />
-              <h1 className="hero-title" ref={titleRef}>
-                {personalInfo.name}
-              </h1>
-            </div>
-          </div>
-          
+        <div className="hero-content hero-animated-gradient">          
           <div className="hero-text">
-            <h2 className="hero-subtitle" ref={subtitleRef}>
+            <h1 className="hero-title" ref={titleRef}>
+              {personalInfo.name}
+            </h1>
+            <h2 className="hero-subtitle hero-typewriter" ref={subtitleRef}>
               {personalInfo.title}
             </h2>
             
@@ -60,7 +46,7 @@ const Hero = () => {
             </p>
             
             <div className="hero-actions" ref={buttonRef}>
-              <a href="#contact" className="btn-base btn-primary">
+              <a href="#contact" className="btn-base btn-primary btn-glassy">
                 <span>Contattami</span>
                 <ArrowRight size={18} />
               </a>

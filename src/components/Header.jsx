@@ -31,7 +31,7 @@ const Header = () => {
         <div className="header-content">
           <div className="logo">
             <a href="#home" className="logo-link">
-              <span className="logo-text">RZ</span>
+              <span className="logo-text logo-liquid">RZ</span>
             </a>
           </div>
 
@@ -53,7 +53,7 @@ const Header = () => {
 
           <div className="header-actions">
             <button
-              className="theme-toggle"
+              className="theme-toggle theme-toggle-advanced"
               onClick={toggleTheme}
               aria-label={isDarkMode ? 'Passa alla modalità chiara' : 'Passa alla modalità scura'}
             >
