@@ -227,6 +227,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-top: 80px; /* spazio per l'header fisso */
 }
 
 /* Background globale più pulito e “Apple-like” */
@@ -1387,4 +1388,68 @@ h4, .heading-sm {
   border-top: 1px solid rgba(148, 163, 253, 0.18);
   margin-top: 3rem;
   padding-top: 1.75rem;
+}
+
+/* Hero - layout pulito e centrato */
+.hero {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+}
+
+.hero .container {
+  max-width: 1120px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  padding-block: 3rem;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.hero-text {
+  max-width: 640px;
+}
+
+.hero-title {
+  font-family: var(--font-family-heading);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  letter-spacing: -0.04em;
+  margin-bottom: 0.75rem;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--color-text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  max-width: 520px;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .hero-actions {
+    justify-content: center;
+  }
 }
