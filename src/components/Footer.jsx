@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowUp, Heart } from 'lucide-react';
 import SocialMediaIcons from './SocialMediaIcons';
-import WhatsAppChatButton from './WhatsAppChatButton';
 
 const Footer = () => {
   const [currentYear] = React.useState(new Date().getFullYear());
@@ -60,15 +59,6 @@ const Footer = () => {
                   iconColor="var(--text-primary)"
                   containerBg="var(--bg-elevated)"
                   borderRadius={12}
-                />
-                <WhatsAppChatButton
-                  phoneNumber="+393762381731"
-                  message="Ciao! Vorrei saperne di più sul tuo lavoro."
-                  size="medium"
-                  showText={false}
-                  showIcon={true}
-                  position="static"
-                  className="whatsapp-inline"
                 />
               </div>
             </div>
