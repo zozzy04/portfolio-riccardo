@@ -31,7 +31,7 @@ export const aboutData = {
     {
       icon: 'Rocket',
       title: 'Il Mio Lavoro',
-      description: 'Lavoro come AI Developer & Data Analyst presso Enernext, dove sviluppo soluzioni intelligenti e analisi dati per ottimizzare i processi aziendali.'
+      description: 'Lavoro come AI Developer Trainee presso Enernext, dove sviluppo software per la gestione energetica con AI, sistemi di archiviazione ed estrazione dati, chatbot aziendali multilivello e supporto IT.'
     },
     {
       icon: 'Code',
@@ -61,12 +61,12 @@ export const skillsData = {
   education: [
     {
       icon: 'School',
-      title: 'ITS Digital Academy',
+      title: 'ITS Digital Academy Mario Volpato',
       link: 'https://itsdigitalacademy.com',
-      location: 'Treviso, Italia',
-      period: '2023 - 2025',
-      qualification: 'AI Developer & Data Analyst',
-      description: 'Corso biennale specializzato in sviluppo di applicazioni AI e analisi dati. Focus su Python, Machine Learning, Data Visualization e tecnologie moderne.'
+      location: 'Mestre, Italia',
+      period: 'Ottobre 2024 - Presente',
+      qualification: 'AI Developer & Data Analyst - Qualifica post-diploma (EQF Level 5)',
+      description: 'Corso specializzato in sviluppo di applicazioni AI e analisi dati. Moduli: Programmazione, Basi dati, Statistical Learning, Data Science, Data Visualization, Big Data Computing, Deep Learning, AI Generativa, Data Driven Marketing. Focus su Python, Machine Learning, Data Visualization e tecnologie moderne.'
     },
     {
       icon: 'GraduationCap',
@@ -96,7 +96,15 @@ export const skillsData = {
     'NumPy',
     'Pandas',
     'Scikit-learn',
-    'Orange'
+    'Orange',
+    'C#',
+    'Java',
+    'MS Office',
+    'AutoCAD LT 2D',
+    'Data Analytics',
+    'AI/ML',
+    'HTML',
+    'CSS'
   ]
 };
 
@@ -109,20 +117,40 @@ export const experienceData = {
       title: 'AI Developer Trainee',
       company: 'Enernext',
       companyLink: 'https://enernext.it',
-      location: 'Italia',
+      location: 'Oderzo, Italia',
       period: 'Ottobre 2025 - Presente',
-      description: 'Tirocinio come AI Developer Trainee presso Enernext, dove sviluppo app e software con AI applicata per soluzioni innovative nel settore energetico.',
-      technologies: ['AI/ML', 'Python', 'React', 'JavaScript', 'Machine Learning']
+      description: 'Tirocinio come AI Developer Trainee presso Enernext. Sviluppo software per la gestione energetica con integrazione di Intelligenza Artificiale, creazione di sistemi di archiviazione ed estrazione dati, sviluppo di chatbot aziendali multilivello e supporto IT.',
+      technologies: ['AI/ML', 'Python', 'React', 'JavaScript', 'Machine Learning', 'Chatbot', 'Data Management']
     },
     {
       icon: 'Brain',
       title: 'Stagista',
       company: 'EsPiù S.r.l. Società Benefit',
       companyLink: 'https://espiu.it',
-      location: 'Treviso, Italia',
+      location: 'Oderzo, Italia',
+      period: 'Luglio 2025 - Agosto 2025',
+      description: 'Tirocinio extracurriculare presso EsPiù. Creazione di webapp con integrazione di AI per automatizzare processi aziendali e supporto IT.',
+      technologies: ['Python', 'Power BI', 'Qlik', 'Knime', 'SQL', 'React', 'AI', 'Web Development']
+    },
+    {
+      icon: 'Brain',
+      title: 'Stagista',
+      company: 'EsPiù S.r.l. Società Benefit',
+      companyLink: 'https://espiu.it',
+      location: 'Oderzo, Italia',
       period: 'Maggio 2025 - Giugno 2025',
-      description: 'Stage presso EsPiù nell\'Innovation Hub, dove mi sono occupato di sviluppo di soluzioni AI e analisi dati per ottimizzare i processi aziendali.',
+      description: 'Tirocinio curriculare presso EsPiù nell\'Innovation Hub, dove mi sono occupato di sviluppo di soluzioni AI e analisi dati per ottimizzare i processi aziendali.',
       technologies: ['Python', 'Power BI', 'Qlik', 'Knime', 'SQL', 'React']
+    },
+    {
+      icon: 'Briefcase',
+      title: 'Operaio del settore vinicolo',
+      company: 'OPITERGIUM VINI',
+      companyLink: 'https://www.cantinaoderzo.it/',
+      location: 'Oderzo, Veneto, Italia',
+      period: 'Agosto 2025 - Settembre 2025',
+      description: 'Lavoro stagionale come operaio del settore vinicolo. Conferimento uve, lavaggio vasche, rifornimento spaccio aziendale e stoccaggio vini.',
+      technologies: []
     },
     {
       icon: 'Briefcase',
@@ -166,12 +194,22 @@ export const experienceData = {
     },
     {
       icon: 'Briefcase',
+      title: 'Stagista PCTO',
+      company: 'Arko spa',
+      companyLink: '#',
+      location: 'Motta di Livenza, Veneto, Italia',
+      period: 'Agosto 2022 - Settembre 2022',
+      description: 'PCTO presso Arko spa. Addetto alla campionatura, smaltimento archivi, organizzazione tabulati orari di produzione e controllo carichi e scarichi della merce in entrata ed uscita.',
+      technologies: []
+    },
+    {
+      icon: 'Briefcase',
       title: 'Stagista',
       company: 'Gruppo Geromin',
       companyLink: 'https://www.gruppogeromin.com/it',
       location: 'San Stino di Livenza, Veneto, Italia',
       period: 'Luglio 2021 - Agosto 2021',
-      description: 'Stage part-time presso Gruppo Geromin, acquisendo esperienza nel settore aziendale e supportando le attività operative.',
+      description: 'Tirocinio estivo presso Gruppo Geromin. Addetto alla sezionatrice, assemblaggio e imballaggio dei prodotti, carico macchine e controllo carichi e scarichi.',
       technologies: []
     }
   ]
